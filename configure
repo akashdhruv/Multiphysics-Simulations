@@ -19,7 +19,7 @@ def configure(site, amrex, flashx, flashkit, hdf5, all):
     print("Generating configuration file")
 
     amrex_tag = "cff96a9"
-    flashx_tag = "c311317b"
+    flashx_tag = "afee52b0"
     flashkit_tag = "364c99d"
     hdf5_tag = "93754ca"
 
