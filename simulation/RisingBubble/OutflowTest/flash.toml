@@ -1,0 +1,98 @@
+# Inverse of Reynolds Number
+Parfile.ins_invReynolds = 0.00460
+
+# 1/Fr**2, Fr (Froude Number)
+Parfile.ins_gravY = -1.0
+
+# Gas density and viscosity scaled by liquid
+Parfile.mph_rhoGas = 1.21e-3
+Parfile.mph_muGas = 2.45e-4
+Parfile.mph_iPropSmear = 1.0
+
+# Inverse Weber Number
+Parfile.mph_invWeber = 0.0083
+
+# bubble radius
+Parfile.sim_bubbleRadius = 0.25
+
+#       Grid dimensionality and geometry
+Parfile.geometry = "cartesian"
+
+#       Size of computational volume
+Parfile.xmin = -0.75
+Parfile.xmax = 0.75
+Parfile.ymin = -0.5
+Parfile.ymax = 2.5
+Parfile.zmin = -0.75
+Parfile.zmax = 0.75
+
+#       Boundary conditions
+Parfile.xl_boundary_type = "noslip_ins"
+Parfile.xr_boundary_type = "noslip_ins"
+Parfile.yl_boundary_type = "noslip_ins"
+Parfile.yr_boundary_type = "outflow_ins"
+Parfile.zl_boundary_type = "noslip_ins"
+Parfile.zr_boundary_type = "noslip_ins"
+
+#       Simulation (grid, time, I/O) parameters
+Parfile.run_comment = "Rising Bubble problem"
+Parfile.log_file = "INS_Rising_Bubble.log"
+Parfile.basenm = "INS_Rising_Bubble_"
+Parfile.restart = ".false."
+Parfile.nend = 10000000
+Parfile.tmax = 10
+Parfile.ins_cflFlg = 1
+Parfile.ins_cfl = 0.05
+Parfile.ins_sigma = 0.05
+Parfile.ins_dtSpec = 1.0e-4
+Parfile.dtinit = 1.0e-4
+Parfile.dtmax = 1.0e-4
+Parfile.tstep_change_factor = 1.0
+Parfile.ins_pressureCorrect = ".false."
+
+Parfile.plot_var_1 = "pres"
+Parfile.plot_var_2 = "velx"
+Parfile.plot_var_3 = "vely"
+Parfile.plot_var_4 = "dfun"
+
+Parfile.checkpointFileIntervalTime = 1.0
+Parfile.checkpointFileIntervalStep = 0
+
+Parfile.plotFileIntervalTime = 1.0
+Parfile.plotFileIntervalStep = 0
+
+# AMR parameters
+Parfile.nblockx = 3
+Parfile.nblocky = 6
+Parfile.nblockz = 3
+Parfile.nrefs = 10
+
+Parfile.lrefine_min = 1
+Parfile.lrefine_max = 1
+
+# 	Runtime parameters for the Rising Bubble problem.
+Parfile.gr_pmRpDivergenceFree = 1
+Parfile.gr_pmRpNfieldDivf = 2
+Parfile.gr_pmRpConsvFluxes = ".TRUE."
+Parfile.gr_pmRpConsvFluxDensities = ".FALSE."
+
+# Settings for guard cell filling
+Parfile.gr_bcEnableApplyMixedGds = ".FALSE."
+Parfile.convertToConsvdForMeshCalls = ".FALSE."
+Parfile.convertToConsvdInMeshInterp = ".FALSE."
+Parfile.enableMaskedGCFill = ".FALSE."
+
+# 	Flux Conservation for AMR
+Parfile.flux_correct = ".true."
+
+# AMReX Poisson Solver Parameters
+Parfile.gr_amrexMG_composite_solve = ".TRUE."
+Parfile.gr_amrexMG_Tol = 1e-13
+Parfile.gr_amrexMG_max_iter = 200
+
+# HYPRE Poisson Solver Parameters
+Parfile.gr_hyprePrintSolveInfo = ".FALSE."
+Parfile.gr_hyprePcType = "HYPRE_AMG"
+Parfile.gr_hypreSolverType = "HYPRE_BICGSTAB"
+Parfile.gr_hypreRelTol = 1.0e-12
+Parfile.gr_hypreFloor = 1.0e-16

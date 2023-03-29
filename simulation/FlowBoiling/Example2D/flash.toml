@@ -1,0 +1,118 @@
+# Input file to set runtime parameters
+
+# Heater name and number of heaters
+Heater.name = "flow_boiling"
+Heater.dim = 1
+
+# Heater dimensions
+Heater.xmin = -20.0
+Heater.xmax = 20.0
+Heater.zmin = -2.5
+Heater.zmax = 2.5
+Heater.ymin = 0.0
+Heater.ymax = 1e-13
+
+# Wall temperature
+Heater.wallTemp = 1.0
+
+# Contact angle information
+Heater.advAngle = 90.0
+Heater.rcdAngle = 45.0
+Heater.velContact = 0.2
+Heater.nucWaitTime = 0.2
+
+# Number of sites
+Heater.numSites = 150
+Heater.nucSeedRadius = 0.1
+
+# Inverse of Reynolds Number
+Parfile.ins_invReynolds = 0.0042
+Parfile.ins_gravY = -1.0
+
+# Gas density and viscosity scaled by liquid
+Parfile.mph_rhoGas = 0.0083
+Parfile.mph_muGas = 1.0
+Parfile.mph_iPropSmear = 1.5
+
+# Gas thermal conductivity and specific heat
+Parfile.mph_thcoGas = 0.25
+Parfile.mph_CpGas = 0.83
+
+# Stefan number and saturation temperature
+Parfile.mph_Stefan = 0.5298
+Parfile.mph_Tsat = 0.15
+
+# Inverse Weber Number
+Parfile.mph_invWeber = 1.0
+
+# Prandtl number
+Parfile.ht_Prandtl = 8.4
+
+# Outlet parameters
+Parfile.sim_outletBuffer = 1.0  # Outlet Buffer
+Parfile.sim_heaterShowInfo = ".FALSE."
+
+# Grid dimensionality and geometry
+Parfile.geometry = "cartesian"
+
+# Size of computational volume
+Parfile.xmin = -21.0
+Parfile.xmax = 21.0
+Parfile.ymin = 0.0
+Parfile.ymax = 5.0
+Parfile.zmin = -2.5
+Parfile.zmax = 2.5
+
+# Boundary conditions
+Parfile.xl_boundary_type = "inflow_ins"
+Parfile.xr_boundary_type = "outflow_ins"
+Parfile.yl_boundary_type = "noslip_ins"
+Parfile.yr_boundary_type = "slip_ins"
+Parfile.zl_boundary_type = "slip_ins"
+Parfile.zr_boundary_type = "slip_ins"
+
+# Simulation (grid, time, I/O) parameters
+Parfile.run_comment = "Flow Boiling problem"
+Parfile.log_file = "INS_Flow_Boiling.log"
+Parfile.basenm = "INS_Flow_Boiling_"
+Parfile.ins_cflFlg = 1
+Parfile.ins_cfl = 0.05
+Parfile.ins_sigma = 0.05
+Parfile.ins_dtSpec = 0.1e-3
+Parfile.dtinit = 0.1e-3
+Parfile.dtmax = 0.4e-3
+Parfile.tstep_change_factor = 1.01
+Parfile.ins_pressureCorrect = ".false."
+
+# Integration Scheme:
+Parfile.ins_intSchm = 2
+
+Parfile.plot_var_1 = "pres"
+Parfile.plot_var_2 = "velx"
+Parfile.plot_var_3 = "vely"
+Parfile.plot_var_4 = "dfun"
+Parfile.plot_var_5 = "temp"
+Parfile.plot_var_6 = "smhv"
+
+Parfile.ignoreForcedPlot = ".TRUE."
+
+# AMR parameters
+Parfile.nblockx = 84
+Parfile.nblocky = 10
+Parfile.nblockz = 10
+
+# Set highest number for update
+# refinement step since in pseudo UG mode
+Parfile.nrefs = 10000000
+
+# lrefine min/max since in UG mode
+Parfile.lrefine_min = 1
+Parfile.lrefine_max = 1
+
+# Flux Conservation for AMR
+Parfile.flux_correct = ".true."
+
+# AMReX Poisson Solver Parameters
+Parfile.gr_amrexMG_composite_solve = ".TRUE."
+Parfile.gr_amrexMG_Tol = 1.0e-13
+Parfile.gr_amrexMG_max_iter = 200

@@ -1,0 +1,3 @@
+# outlfow parameter
+Parfile.sim_outletBuffer = 1.0
+Parfile.sim_outletGrowthRate = 4.0

@@ -1,0 +1,9 @@
+# YAML configuration file for `jobrunner`.
+
+# job configuration for setting up and submitting jobs,
+# archive and clean artifacts, defining target and input scripts
+job:
+  input:
+    - flash.toml
+  setup:
+    - flashOptions.sh
