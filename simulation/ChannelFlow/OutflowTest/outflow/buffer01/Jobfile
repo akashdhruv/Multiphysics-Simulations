@@ -1,0 +1,10 @@
+# Configuration file for `jobrunner`
+
+job.input = ["buffer.toml"]
+
+# list/patterns of files to
+# archive and store in the
+# directory tree
+job.archive = ["INS*"]
+
+job.clean = ["*.out", "Maplefile", "INS*"]

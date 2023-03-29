@@ -1,0 +1,13 @@
+# Configuration file for `jobrunner`
+
+# input file name. This is application specific
+# can be defined at top level if working with
+# a single applicaltion or futher down the
+# directory tree if working with multiple
+job.input = ["flash.toml"]
+
+# target file
+job.target = "Maplefile"
+
+# list of setup scripts
+job.setup = ["buildImage.sh"]

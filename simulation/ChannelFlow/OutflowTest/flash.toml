@@ -1,0 +1,83 @@
+# 	Runtime parameters for the Channel Flow problem.
+Parfile.gr_pmRpDivergenceFree = 1
+Parfile.gr_pmRpNfieldDivf = 2
+Parfile.gr_pmRpConsvFluxes = ".TRUE."
+Parfile.gr_pmRpConsvFluxDensities = ".FALSE."
+
+# Settings for guard cell filling
+Parfile.gr_bcEnableApplyMixedGds = ".FALSE."
+Parfile.convertToConsvdForMeshCalls = ".FALSE."
+Parfile.convertToConsvdInMeshInterp = ".FALSE."
+Parfile.enableMaskedGCFill = ".FALSE."
+
+# Inverse of Reynolds Number
+Parfile.ins_invReynolds = 0.005
+
+# Subgrid Scale model flag (0 no sgs model, 1 sgs model)
+Parfile.ins_isgs = 0
+
+#       Grid dimensionality and geometry
+Parfile.geometry = "cartesian"
+
+#       Size of computational volume
+Parfile.xmin = 0.0
+Parfile.xmax = 15.0
+Parfile.ymin = -0.5
+Parfile.ymax = 0.5
+Parfile.zmin = -0.5
+Parfile.zmax = 0.5
+
+#       Boundary conditions
+Parfile.xl_boundary_type = "inflow_ins"
+Parfile.xr_boundary_type = "outflow_ins"
+Parfile.yl_boundary_type = "noslip_ins"
+Parfile.yr_boundary_type = "noslip_ins"
+Parfile.zl_boundary_type = "noslip_ins"
+Parfile.zr_boundary_type = "noslip_ins"
+
+#       Simulation (grid, time, I/O) parameters
+Parfile.run_comment = "2D Channel Flow problem"
+Parfile.log_file = "INS_Channel_Flow.log"
+Parfile.basenm = "INS_Channel_Flow_"
+Parfile.restart = ".false."
+Parfile.nend = 20000
+Parfile.tmax = 100.0
+Parfile.ins_cflFlg = 0
+Parfile.ins_cfl = 0.3
+Parfile.ins_sigma = 0.2
+Parfile.ins_dtSpec = 1.0e-3
+Parfile.dtinit = 1.0e-3
+Parfile.tstep_change_factor = 1.1
+Parfile.ins_pressureCorrect = ".false."
+
+Parfile.plot_var_1 = "pres"
+Parfile.plot_var_2 = "velx"
+Parfile.plot_var_3 = "vely"
+Parfile.plot_var_4 = "dust"
+
+Parfile.checkpointFileIntervalStep = 50
+Parfile.plotFileIntervalStep = 50
+
+# AMR parameters
+Parfile.nblockx = 60
+Parfile.nblocky = 4
+Parfile.nblockz = 4
+Parfile.nrefs = 1000
+
+Parfile.lrefine_min = 2
+Parfile.lrefine_max = 2
+
+# 	Flux Conservation for AMR
+Parfile.flux_correct = ".true."
+
+# AMReX Poisson Solver Parameters
+Parfile.gr_amrexMG_composite_solve = ".true."
+Parfile.gr_amrexMG_Tol = 1e-13
+Parfile.gr_amrexMG_max_iter = 200
+
+# HYPRE Poisson Solver Parameters
+Parfile.gr_hyprePrintSolveInfo = ".false."
+Parfile.gr_hyprePcType = "HYPRE_AMG"
+Parfile.gr_hypreSolverType = "HYPRE_BICGSTAB"
+Parfile.gr_hypreRelTol = 1.0e-12
+Parfile.gr_hypreFloor = 1.0e-16

@@ -1,0 +1,4 @@
+# Configuration file for `jobrunner`
+
+# submit scripts
+job.submit = ["outflow.sh"]

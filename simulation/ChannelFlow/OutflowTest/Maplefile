@@ -1,0 +1,5 @@
+# Maplefile for simulation
+#
+base = "docker://akashdhruv/channel_flow:outflow_bc"
+container = "channel_flow"
+backend = "singularity"

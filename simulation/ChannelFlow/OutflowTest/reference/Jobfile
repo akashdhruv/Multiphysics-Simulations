@@ -1,0 +1,12 @@
+# Configuration file for `jobrunner`
+
+# list/patterns of files to
+# archive and store in the
+# directory tree
+job.archive = ["INS*", "*.out"]
+
+# list/patterns to clean
+job.clean = ["*.out", "Maplefile", "unitTest*", "INS*"]
+
+# list of submit scripts
+job.submit = ["neumann.sh"]
