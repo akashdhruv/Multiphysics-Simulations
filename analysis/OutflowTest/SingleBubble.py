@@ -6,61 +6,94 @@ import numpy
 import matplotlib.pyplot as pyplot
 import boxkit
 
+
 def getWallHflux(dataset):
     """
     Get heat flux profile
-    """   
+    """
     hflux = numpy.array([])
     xloc = numpy.array([])
-    yloc = 0.
- 
-    dataSlice = boxkit.create_slice(dataset, ymin=yloc, ymax=yloc)       
+    iliq = numpy.array([])
+
+    yloc = 0.0
+
+    dataSlice = boxkit.create_slice(dataset, ymin=yloc, ymax=yloc)
 
     for block in dataSlice.blocklist:
         yindex = (numpy.abs(block.yrange("center") - yloc)).argmin()
         zindex = 0
         xloc = numpy.append(xloc, block.xrange("center"))
-        hflux = numpy.append(hflux, (1-block["temp"][zindex, yindex, :])/block.dy)
-       
-    hfluxProfile = {'xloc' : xloc, 'hflux' : hflux}
+        hflux = numpy.append(
+            hflux,
+            (block["dfun"][zindex, yindex, :] < 0)
+            * (1 - block["temp"][zindex, yindex, :])
+            / block.dy,
+        )
+        iliq = numpy.append(iliq, block["dfun"][zindex, yindex, :] < 0)
+
+    hfluxProfile = {"xloc": xloc, "hflux": hflux, "iliq": iliq}
 
     return hfluxProfile
 
 
 if __name__ == "__main__":
 
-    PROJECT_HOME="/home/akash/jobs/boiling-simulations/simulation/PoolBoiling/SingleBubble"
+    PROJECT_HOME = (
+        "/home/akash/jobs/boiling-simulations/simulation/PoolBoiling/SingleBubble"
+    )
 
     datasetLoc = {
-        r"Buffer = 0.5" : PROJECT_HOME + os.sep + "jobnode.archive/buffer_0.5_long",
-        r"Buffer = 1.0" : PROJECT_HOME + os.sep + "jobnode.archive/buffer_1.0_long",
+        r"Buffer = 0.5": PROJECT_HOME + os.sep + "jobnode.archive/buffer_0.5_long",
+        r"Buffer = 1.0": PROJECT_HOME + os.sep + "jobnode.archive/buffer_1.0_long",
     }
 
-    fileNumList = [*range(1,401)]
+    fileNumList = [*range(1, 401)]
 
     datasetDict = {}
     for datasetKey in datasetLoc.keys():
         datasetList = []
         for fileNum in fileNumList:
-            dataset = boxkit.read_dataset(datasetLoc[datasetKey] 
-                                          + os.sep 
-                                          + "INS_Pool_Boiling_hdf5_plt_cnt_"
-                                          + str(fileNum).zfill(4), source="flash")
+            dataset = boxkit.read_dataset(
+                datasetLoc[datasetKey]
+                + os.sep
+                + "INS_Pool_Boiling_hdf5_plt_cnt_"
+                + str(fileNum).zfill(4),
+                source="flash",
+            )
             datasetList.append(dataset)
-        datasetDict[datasetKey]=datasetList
+        datasetDict[datasetKey] = datasetList
 
+    #refKey = r"Reference"
+    #datasetLoc[refKey] = PROJECT_HOME + os.sep + "jobnode.archive/reference_long"
+    #fileNumListRef = [*range(1, 105)]
+    #datasetList = []
+    #for fileNum in fileNumListRef:
+    #    dataset = boxkit.read_dataset(
+    #        datasetLoc[refKey]
+    #        + os.sep
+    #        + "INS_Pool_Boiling_hdf5_plt_cnt_"
+    #        + str(fileNum).zfill(4),
+    #        source="flash",
+    #    )
+    #    datasetList.append(dataset)
+    #    datasetDict[refKey] = datasetList
 
     heatFluxDict = {}
     for datasetKey in datasetDict.keys():
         heatFluxList = []
         for dataset in datasetDict[datasetKey]:
             hfluxProfile = getWallHflux(dataset)
-            heatFlux = numpy.mean(hfluxProfile['hflux'][:])
+            heatFlux = numpy.mean(hfluxProfile["hflux"][:]) / numpy.mean(
+                hfluxProfile["iliq"][:]
+            )
             heatFluxList.append(heatFlux)
         heatFluxDict[datasetKey] = heatFluxList
 
-pyplot.figure(figsize=(12,8))
-pyplot.plot(fileNumList, signal.savgol_filter(heatFluxDict["Buffer = 0.5"],20,3))
-pyplot.plot(fileNumList, signal.savgol_filter(heatFluxDict["Buffer = 1.0"],20,3))
-pyplot.ylim([3.5,5])
-pyplot.savefig('singlebubble.png')
+    pyplot.rc("font", family="serif", size=10, weight="bold")
+    pyplot.rc("axes", labelweight="bold", titleweight="bold")
+    pyplot.rc("text", usetex=True)
+    pyplot.figure(figsize=(3, 2), dpi=200)
+    #pyplot.plot(fileNumListRef, signal.savgol_filter(heatFluxDict["Reference"], 4, 3))
+    pyplot.plot(fileNumList, signal.savgol_filter(heatFluxDict["Buffer = 0.5"], 20, 3))
+    pyplot.plot(fileNumList, signal.savgol_filter(heatFluxDict["Buffer = 1.0"], 20, 3))
+    pyplot.savefig("singlebubble.png")
