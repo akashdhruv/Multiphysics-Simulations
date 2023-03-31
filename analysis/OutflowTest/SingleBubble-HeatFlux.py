@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 import itertools
 from scipy import signal
 import numpy
@@ -38,13 +39,15 @@ def getWallHflux(dataset):
 
 if __name__ == "__main__":
 
-    PROJECT_HOME = (
-        "/home/akash/jobs/boiling-simulations/simulation/PoolBoiling/SingleBubble"
-    )
+    PROJECT_HOME = "/home/akash/Desktop/Akash/Workbench/Flash-X-Simulations"
 
     datasetLoc = {
-        r"Buffer = 0.5": PROJECT_HOME + os.sep + "jobnode.archive/buffer_0.5_long",
-        r"Buffer = 1.0": PROJECT_HOME + os.sep + "jobnode.archive/buffer_1.0_long",
+        r"Buffer = 0.5": PROJECT_HOME
+        + os.sep
+        + "simulation/PoolBoiling/SingleBubble/jobnode.archive/buffer_0.5_long",
+        r"Buffer = 1.0": PROJECT_HOME
+        + os.sep
+        + "simulation/PoolBoiling/SingleBubble/jobnode.archive/buffer_1.0_long",
     }
 
     fileNumList = [*range(1, 401)]
@@ -63,11 +66,11 @@ if __name__ == "__main__":
             datasetList.append(dataset)
         datasetDict[datasetKey] = datasetList
 
-    #refKey = r"Reference"
-    #datasetLoc[refKey] = PROJECT_HOME + os.sep + "jobnode.archive/reference_long"
-    #fileNumListRef = [*range(1, 105)]
-    #datasetList = []
-    #for fileNum in fileNumListRef:
+    # refKey = r"Reference"
+    # datasetLoc[refKey] = PROJECT_HOME + os.sep + "jobnode.archive/reference_long"
+    # fileNumListRef = [*range(1, 105)]
+    # datasetList = []
+    # for fileNum in fileNumListRef:
     #    dataset = boxkit.read_dataset(
     #        datasetLoc[refKey]
     #        + os.sep
@@ -87,13 +90,27 @@ if __name__ == "__main__":
                 hfluxProfile["iliq"][:]
             )
             heatFluxList.append(heatFlux)
-        heatFluxDict[datasetKey] = heatFluxList
+        heatFluxDict[datasetKey] = {"qliq": heatFluxList, "time": fileNumList}
+
+    with open("SingleBubble-HeatFlux.json", "w") as heatFluxFile:
+        heatFluxFile.write(json.dumps(heatFluxDict))
 
     pyplot.rc("font", family="serif", size=10, weight="bold")
     pyplot.rc("axes", labelweight="bold", titleweight="bold")
     pyplot.rc("text", usetex=True)
     pyplot.figure(figsize=(3, 2), dpi=200)
-    #pyplot.plot(fileNumListRef, signal.savgol_filter(heatFluxDict["Reference"], 4, 3))
-    pyplot.plot(fileNumList, signal.savgol_filter(heatFluxDict["Buffer = 0.5"], 20, 3))
-    pyplot.plot(fileNumList, signal.savgol_filter(heatFluxDict["Buffer = 1.0"], 20, 3))
+    # pyplot.plot(
+    #    heatFluxDict["Reference"]["time"],
+    #    signal.savgol_filter(heatFluxDict["Reference"]["qliq"], 4, 3),
+    # )
+    pyplot.plot(
+        heatFluxDict["Buffer = 0.5"]["time"],
+        signal.savgol_filter(heatFluxDict["Buffer = 0.5"]["qliq"], 20, 5),
+    )
+    pyplot.plot(
+        heatFluxDict["Buffer = 1.0"]["time"],
+        signal.savgol_filter(heatFluxDict["Buffer = 1.0"]["qliq"], 20, 5),
+    )
+    pyplot.ylabel(r"$q_L$")
+    pyplot.xlabel(r"$t$")
     pyplot.savefig("singlebubble.png")
