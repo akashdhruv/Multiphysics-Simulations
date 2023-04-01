@@ -51,12 +51,12 @@ Parfile.basenm = "INS_Evaporating_Bubble_"
 Parfile.restart = ".false."
 Parfile.nend = 10000000
 Parfile.tmax = 10
-Parfile.ins_cflFlg = 1
+Parfile.ins_cflFlg = 0
 Parfile.ins_cfl = 0.05
 Parfile.ins_sigma = 0.05
-Parfile.ins_dtSpec = 1.0e-4
-Parfile.dtinit = 1.0e-4
-Parfile.dtmax = 1.0e-4
+Parfile.ins_dtSpec = 0.025e-4  # 0.015625e-4 #1.0e-4
+Parfile.dtinit = 0.025e-4  # 0.015625e-4 #1.0e-4
+Parfile.dtmax = 0.025e-4  # 0.015625e-4 #1.0e-4
 Parfile.tstep_change_factor = 1.0
 Parfile.ins_pressureCorrect = ".false."
 
@@ -74,9 +74,9 @@ Parfile.plotFileIntervalTime = 1.0
 Parfile.plotFileIntervalStep = 0
 
 # AMR parameters
-Parfile.nblockx = 3
-Parfile.nblocky = 6
-Parfile.nblockz = 3
+Parfile.nblockx = 18  # 24 #12 #6  #3
+Parfile.nblocky = 36  # 48 #24 #12 #6
+Parfile.nblockz = 18  # 24 #12 #6  #3
 Parfile.nrefs = 10
 
 Parfile.lrefine_min = 1
@@ -99,7 +99,7 @@ Parfile.flux_correct = ".true."
 
 # AMReX Poisson Solver Parameters
 Parfile.gr_amrexMG_composite_solve = ".TRUE."
-Parfile.gr_amrexMG_Tol = 1e-13
+Parfile.gr_amrexMG_Tol = 2e-13
 Parfile.gr_amrexMG_max_iter = 200
 
 # HYPRE Poisson Solver Parameters
