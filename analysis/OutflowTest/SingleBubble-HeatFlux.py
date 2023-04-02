@@ -44,13 +44,13 @@ if __name__ == "__main__":
     datasetLoc = {
         r"Buffer = 0.5": PROJECT_HOME
         + os.sep
-        + "simulation/PoolBoiling/SingleBubble/jobnode.archive/buffer_0.5_long",
+        + "simulation/PoolBoiling/SingleBubble/jobnode.archive/buffer_0.5_long_twait_0.4",
         r"Buffer = 1.0": PROJECT_HOME
         + os.sep
-        + "simulation/PoolBoiling/SingleBubble/jobnode.archive/buffer_1.0_long",
+        + "simulation/PoolBoiling/SingleBubble/jobnode.archive/buffer_1.0_long_twait_0.4",
     }
 
-    fileNumList = [*range(1, 401)]
+    fileNumList = [*range(1, 501)]
 
     datasetDict = {}
     for datasetKey in datasetLoc.keys():
