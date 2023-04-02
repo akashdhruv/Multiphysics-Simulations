@@ -17,7 +17,7 @@ Heater.wallTemp = 1.0
 Heater.advAngle = 45.0
 Heater.rcdAngle = 45.0
 Heater.velContact = 0.2
-Heater.nucWaitTime = 0.25
+Heater.nucWaitTime = 0.4
 
 # Site information
 Heater.numSites = 1
@@ -50,7 +50,7 @@ Parfile.ht_Prandtl = 7
 
 # Outlet parameters
 Parfile.sim_outletSink = -1.0 # Outlet level set sink
-Parfile.sim_outletBuffer = 0.5  # Outlet buffer region
+Parfile.sim_outletBuffer = 1.0  # Outlet buffer region
 Parfile.sim_heaterShowInfo = ".FALSE."
 
 #       Grid dimensionality and geometry
@@ -78,7 +78,7 @@ Parfile.log_file = "INS_Pool_Boiling.log"
 Parfile.basenm = "INS_Pool_Boiling_"
 Parfile.restart = ".false."
 Parfile.nend = 10000000
-Parfile.tmax = 200
+Parfile.tmax = 250
 Parfile.ins_cflFlg = 0
 Parfile.ins_cfl = 0.05
 Parfile.ins_sigma = 0.05
