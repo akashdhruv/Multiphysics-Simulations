@@ -1,0 +1,21 @@
+# YAML configuration file for `jobrunner`.
+
+# job configuration for setting up and submitting jobs,
+# archive and clean artifacts, defining target and input scripts
+job:
+  input:
+    - flash.toml
+  archive:
+    - flash.par
+    - "INS*"
+    - "*_hdf5_*"
+    - "*.log"
+    - "*.out"
+  clean:
+    - flash.par
+    - "INS*"
+    - "*_hdf5_*"
+    - "*.log"
+    - "unitTest*"
+    - "*.out"
+    - "*.log"

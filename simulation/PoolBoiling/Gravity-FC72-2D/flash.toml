@@ -63,12 +63,12 @@ Parfile.zmin = -8.0
 Parfile.zmax = 8.0
 
 #       Boundary conditions
-Parfile.xl_boundary_type = "slip_ins"
-Parfile.xr_boundary_type = "slip_ins"
+Parfile.xl_boundary_type = "noslip_ins"
+Parfile.xr_boundary_type = "noslip_ins"
 Parfile.yl_boundary_type = "noslip_ins"
 Parfile.yr_boundary_type = "outflow_ins"
-Parfile.zl_boundary_type = "slip_ins"
-Parfile.zr_boundary_type = "slip_ins"
+Parfile.zl_boundary_type = "noslip_ins"
+Parfile.zr_boundary_type = "noslip_ins"
 
 #       Simulation (grid, time, I/O) parameters
 Parfile.run_comment = "Pool Boiling problem"

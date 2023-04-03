@@ -1,0 +1,16 @@
+job:
+  target: flashx
+  setup:
+    - flashOptions.sh
+    - flashBuild.sh
+  submit:
+    - flashRun.sh
+  archive:
+    - amrex.pc
+  clean:
+    - flashx
+    - amrex.pc
+    - "INS*"
+    - "*.out"
+  input:
+    - flash.toml
