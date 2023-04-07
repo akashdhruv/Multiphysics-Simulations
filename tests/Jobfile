@@ -1,0 +1,6 @@
+# YAML configuration file for jobrunner
+job:
+  setup:
+    - testSetup.sh
+  submit:
+    - testRun.sh

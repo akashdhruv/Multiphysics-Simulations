@@ -1,0 +1,18 @@
+# File containing details of test specifications for
+# specific simulations that reference keys defined in
+# tests/tests.toml files defined in the simulation
+# directories
+#
+# Comments can be added using a `#` sign and individual
+# tests spec can be defined with relevant options as shown below
+#
+# List of options
+# --test, -t 		Desired test key/node from tests/tests.toml
+# --nprocs, -np		Number of MPI procs to be used
+# --env, -e		Environment variables, can be supplied multiple times
+# --debug, -debug	Flag to run test in debug
+# --cbase, -cbase 	Date string YYYY-MM-DD[_version]
+# --rbase, -rbase 	Date string YYYY-MM-DD[_version]
+# --tolerance, -tol	Tolerance for SFOCU
+
+incompFlow/PoolBoiling -t "Comparison/incompFlow/PoolBoiling/2d/AMReX" -np 4 -cbase 2023-04-03

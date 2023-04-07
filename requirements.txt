@@ -1,3 +1,4 @@
 boxkit
 pyjobrunner
 pymaple
+git+ssh://git@github.com/Flash-X/Flash-X-Test.git@main
