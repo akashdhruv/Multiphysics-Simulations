@@ -24,3 +24,5 @@
 
 -  Immersed boundary alogrithm with ANN - use normal vectors from stl
    file
+
+-  Neural Poisson
