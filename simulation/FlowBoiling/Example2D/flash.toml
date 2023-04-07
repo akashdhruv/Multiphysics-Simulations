@@ -22,7 +22,7 @@ Heater.velContact = 0.2
 Heater.nucWaitTime = 0.2
 
 # Number of sites
-Heater.numSites = 150
+Heater.numSites = 300
 Heater.nucSeedRadius = 0.1
 
 # Inverse of Reynolds Number

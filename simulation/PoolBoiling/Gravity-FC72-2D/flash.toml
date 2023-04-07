@@ -17,11 +17,11 @@ Heater.wallTemp = 1.0
 Heater.advAngle = 90.0
 Heater.rcdAngle = 45.0
 Heater.velContact = 0.2
-Heater.nucWaitTime = 0.2
+Heater.nucWaitTime = 0.4
 Heater.nucSeedRadius = 0.1
 
 # Number of nucleation sites
-Heater.numSites = 25
+Heater.numSites = 30
 
 # Inverse of Reynolds Number
 Parfile.ins_invReynolds = 0.0042
@@ -48,7 +48,7 @@ Parfile.mph_invWeber = 1.0
 Parfile.ht_Prandtl = 8.4
 
 # Outlet parameters
-Parfile.sim_outletBuffer = 1.0  # Outlet buffer region
+Parfile.sim_outletBuffer = 4.0  # Outlet buffer region
 Parfile.sim_heaterShowInfo = ".FALSE."
 
 #       Grid dimensionality and geometry

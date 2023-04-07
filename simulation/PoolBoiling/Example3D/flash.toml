@@ -17,7 +17,7 @@ Heater.wallTemp = 1.0
 Heater.advAngle = 90.0
 Heater.rcdAngle = 45.0
 Heater.velContact = 0.2
-Heater.nucWaitTime = 0.2
+Heater.nucWaitTime = 0.4
 
 # Site information
 Heater.numSites = 50
