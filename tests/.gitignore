@@ -3,3 +3,4 @@ execfile
 test.info
 TestResults
 flashxtest_api.log
+job.*
