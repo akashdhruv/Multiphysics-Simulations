@@ -4,3 +4,6 @@ job:
     - testSetup.sh
   submit:
     - testRun.sh
+  clean:
+    - job.output
+    - flashxtest_api.log

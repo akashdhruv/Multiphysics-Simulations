@@ -97,9 +97,9 @@ Parfile.plot_var_6 = "smhv"
 Parfile.ignoreForcedPlot = ".TRUE."
 
 # AMR parameters
-Parfile.nblockx = 84
-Parfile.nblocky = 10
-Parfile.nblockz = 10
+Parfile.nblockx = 126
+Parfile.nblocky = 15
+Parfile.nblockz = 15
 
 # Set highest number for update
 # refinement step since in pseudo UG mode
@@ -116,3 +116,15 @@ Parfile.flux_correct = ".true."
 Parfile.gr_amrexMG_composite_solve = ".TRUE."
 Parfile.gr_amrexMG_Tol = 1.0e-13
 Parfile.gr_amrexMG_max_iter = 200
+
+# Velocity scale
+Parfile.ins_inflowVelScale = 1.0
+
+# Restart, checkpoint, and plotting options
+Parfile.nend = 10000000
+Parfile.tmax = 200.0
+Parfile.restart = ".false."
+Parfile.checkpointFileNumber = 0
+Parfile.checkpointFileIntervalTime = 5.0
+Parfile.plotFileNumber = 0
+Parfile.plotFileIntervalTime = 1.0
