@@ -22,7 +22,7 @@ for outfile in outfiles:
     print(len(outflowVelDict["time"]),len(outflowVelDict["gas"]))
 
 
-skip = 1000
+skip = 4000
 outflowVelDict["time"] = outflowVelDict["time"][::skip]
 outflowVelDict["gas"] = outflowVelDict["gas"][::skip]
 outflowVelDict["liq"] = outflowVelDict["liq"][::skip]
