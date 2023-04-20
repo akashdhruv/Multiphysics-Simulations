@@ -14,10 +14,10 @@ for outfile in outfiles:
                 outflowVelDict["time"].append(float(line.split()[-1]))
 
             if re.search("Outlet Gas Velocity HIGH", line):
-                outflowVelDict["gas"].append(float(line.split()[5]))
+                outflowVelDict["gas"].append(float(line.split()[4]))
 
             if re.search("Outlet Liq Velocity HIGH", line):
-                outflowVelDict["liq"].append(float(line.split()[5]))
+                outflowVelDict["liq"].append(float(line.split()[4]))
 
     print(len(outflowVelDict["time"]),len(outflowVelDict["gas"]))
 
