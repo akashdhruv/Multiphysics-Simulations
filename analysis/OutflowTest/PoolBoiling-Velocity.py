@@ -19,7 +19,14 @@ for outfile in outfiles:
             if re.search("Outlet Liq Velocity HIGH", line):
                 outflowVelDict["liq"].append(line.split()[5])
 
-    #print(len(outflowVelDict["time"]),len(outflowVelDict["gas"]))
+    print(len(outflowVelDict["time"]),len(outflowVelDict["gas"]))
+
+
+skip = 1000
+outflowVelDict["time"] = outflowVelDict["time"][::skip]
+outflowVelDict["gas"] = outflowVelDict["gas"][::skip]
+outflowVelDict["liq"] = outflowVelDict["liq"][::skip]
+print(len(outflowVelDict["time"]),len(outflowVelDict["gas"]))
 
 with open("PoolBoiling-Velocity.json", "w") as velFile:
     velFile.write(json.dumps(outflowVelDict))
