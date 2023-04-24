@@ -15,4 +15,5 @@
 # --rbase, -rbase 	Date string YYYY-MM-DD[_version]
 # --tolerance, -tol	Tolerance for SFOCU
 
+incompFlow/ChannelFlow -t "UnitTest/incompFlow/ChanneFlow/2d/Periodic" -np 4
 incompFlow/PoolBoiling -t "Comparison/incompFlow/PoolBoiling/2d/AMReX" -np 4 -cbase 2023-04-03
