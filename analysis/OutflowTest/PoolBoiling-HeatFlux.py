@@ -45,9 +45,10 @@ if __name__ == "__main__":
         r"Buffer = 4.0": PROJECT_HOME
         + os.sep
         + "simulation/PoolBoiling/Gravity-FC72-2D/gravY-1.0/jobnode.archive/2023-04-13",
+        #+ "simulation/PoolBoiling/Gravity-FC72-2D/gravY-0.1",
     }
 
-    fileNumList = [*range(60, 230)]
+    fileNumList = [*range(60, 238)]
 
     datasetDict = {}
     for datasetKey in datasetLoc.keys():
@@ -83,9 +84,9 @@ if __name__ == "__main__":
         heatFluxList = []
         for dataset in datasetDict[datasetKey]:
             hfluxProfile = getWallHflux(dataset)
-            heatFlux = numpy.mean(hfluxProfile["hflux"][:]) / numpy.mean(
-                hfluxProfile["iliq"][:]
-            )
+            heatFlux = numpy.mean(hfluxProfile["hflux"][:]) #/ numpy.mean(
+                #hfluxProfile["iliq"][:]
+            #)
             heatFluxList.append(heatFlux)
         heatFluxDict[datasetKey] = {"qliq": heatFluxList, "time": fileNumList}
 

@@ -3,8 +3,8 @@ Parfile.ins_inflowVelScale = 2.0
 
 # Restart, checkpoint, and plotting options
 Parfile.nend = 10000000
-Parfile.tmax = 100.0
-Parfile.restart = ".true."
+Parfile.tmax = 200.0
+Parfile.restart = ".flase."
 Parfile.checkpointFileNumber = 0
 Parfile.checkpointFileIntervalTime = 5.0
 Parfile.plotFileNumber = 0

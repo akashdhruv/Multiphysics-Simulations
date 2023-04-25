@@ -5,8 +5,8 @@ Heater.name = "flow_boiling"
 Heater.dim = 1
 
 # Heater dimensions
-Heater.xmin = -20.0
-Heater.xmax = 20.0
+Heater.xmin = -30.0
+Heater.xmax = 30.0
 Heater.zmin = -2.5
 Heater.zmax = 2.5
 Heater.ymin = 0.0
@@ -22,12 +22,12 @@ Heater.velContact = 0.2
 Heater.nucWaitTime = 0.4
 
 # Number of sites
-Heater.numSites = 200
+Heater.numSites = 300
 Heater.nucSeedRadius = 0.1
 
 # Inverse of Reynolds Number
 Parfile.ins_invReynolds = 0.0042
-Parfile.ins_gravY = -1.0
+Parfile.ins_gravX = -1.0
 
 # Gas density and viscosity scaled by liquid
 Parfile.mph_rhoGas = 0.0083
@@ -49,15 +49,15 @@ Parfile.mph_invWeber = 1.0
 Parfile.ht_Prandtl = 8.4
 
 # Outlet parameters
-Parfile.sim_outletBuffer = 1.0  # Outlet Buffer
+Parfile.sim_outletBuffer = 5.0  # Outlet Buffer
 Parfile.sim_heaterShowInfo = ".FALSE."
 
 # Grid dimensionality and geometry
 Parfile.geometry = "cartesian"
 
 # Size of computational volume
-Parfile.xmin = -21.0
-Parfile.xmax = 21.0
+Parfile.xmin = -35.0
+Parfile.xmax = 35.0
 Parfile.ymin = 0.0
 Parfile.ymax = 5.0
 Parfile.zmin = -2.5
@@ -67,9 +67,9 @@ Parfile.zmax = 2.5
 Parfile.xl_boundary_type = "inflow_ins"
 Parfile.xr_boundary_type = "outflow_ins"
 Parfile.yl_boundary_type = "noslip_ins"
-Parfile.yr_boundary_type = "noslip_ins"
-Parfile.zl_boundary_type = "noslip_ins"
-Parfile.zr_boundary_type = "noslip_ins"
+Parfile.yr_boundary_type = "slip_ins"
+Parfile.zl_boundary_type = "slip_ins"
+Parfile.zr_boundary_type = "slip_ins"
 
 # Simulation (grid, time, I/O) parameters
 Parfile.run_comment = "Flow Boiling problem"
@@ -97,7 +97,7 @@ Parfile.plot_var_6 = "smhv"
 Parfile.ignoreForcedPlot = ".TRUE."
 
 # AMR parameters
-Parfile.nblockx = 84
+Parfile.nblockx = 140
 Parfile.nblocky = 10
 Parfile.nblockz = 10
 
@@ -114,5 +114,5 @@ Parfile.flux_correct = ".true."
 
 # AMReX Poisson Solver Parameters
 Parfile.gr_amrexMG_composite_solve = ".TRUE."
-Parfile.gr_amrexMG_Tol = 1.0e-13
+Parfile.gr_amrexMG_Tol = 1.3e-13
 Parfile.gr_amrexMG_max_iter = 200
