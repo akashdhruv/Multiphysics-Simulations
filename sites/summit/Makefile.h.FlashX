@@ -11,7 +11,7 @@ endif
 #----------------------------------------------------------------------------
 
 MPI_PATH   = ${OLCF_OMPI_ROOT}
-AMREX_PATH = ${AMREX_DIR}/summit_${NDIM}d_gnu
+AMREX_PATH = $(AMREX$(NDIM)D_HOME)
 HDF5_PATH  = ${OLCF_HDF5_ROOT}
 HYPRE_PATH = ${OLCF_HYPRE_ROOT}
 CUDA_PATH  = ${OLCF_CUDA_ROOT}
@@ -104,9 +104,9 @@ FFLAGS_OPT   = -c ${OPT_FLAGS}
 FFLAGS_TEST  = -c ${TEST_FLAGS}
 FFLAGS_DEBUG = -c ${DEBUG_FLAGS} -fcheck=bounds,do,mem,pointer -ffpe-trap=invalid,zero,overflow -fbacktrace
 
-F90FLAGS     = -fdefault-real-8 -fdefault-double-8 -fimplicit-none -ffree-line-length-none -fallow-argument-mismatch -cpp
+F90FLAGS     = -fdefault-real-8 -fdefault-double-8 -fimplicit-none -ffree-line-length-none -Wno-argument-mismatch -cpp
 f90FLAGS     = ${F90FLAGS}
-F77FLAGS     = -fdefault-real-8 -fdefault-double-8 -fimplicit-none -fallow-argument-mismatch -cpp
+F77FLAGS     = -fdefault-real-8 -fdefault-double-8 -fimplicit-none -Wno-argument-mismatch -cpp
 f77FLAGS     = ${F77FLAGS}
 
 FFLAGS_AMREX = -I${AMREX_PATH}/include
