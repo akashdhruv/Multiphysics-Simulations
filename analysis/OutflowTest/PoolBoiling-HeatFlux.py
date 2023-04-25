@@ -44,11 +44,11 @@ if __name__ == "__main__":
     datasetLoc = {
         r"Buffer = 4.0": PROJECT_HOME
         + os.sep
-        + "simulation/PoolBoiling/Gravity-FC72-2D/gravY-1.0/jobnode.archive/2023-04-13",
-        #+ "simulation/PoolBoiling/Gravity-FC72-2D/gravY-0.1",
+        #+ "simulation/PoolBoiling/Gravity-FC72-2D/gravY-1.0/jobnode.archive/2023-04-13",
+        + "simulation/PoolBoiling/Gravity-FC72-2D/gravY-0.1",
     }
 
-    fileNumList = [*range(60, 238)]
+    fileNumList = [*range(60, 250)]
 
     datasetDict = {}
     for datasetKey in datasetLoc.keys():
@@ -90,7 +90,7 @@ if __name__ == "__main__":
             heatFluxList.append(heatFlux)
         heatFluxDict[datasetKey] = {"qliq": heatFluxList, "time": fileNumList}
 
-    with open("PoolBoiling-HeatFlux.json", "w") as heatFluxFile:
+    with open("PoolBoiling-HeatFlux-0.1.json", "w") as heatFluxFile:
         heatFluxFile.write(json.dumps(heatFluxDict))
 
     pyplot.rc("font", family="serif", size=10, weight="bold")
