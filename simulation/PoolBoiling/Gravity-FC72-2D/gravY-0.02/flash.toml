@@ -1,0 +1,11 @@
+# 1/Fr**2, Fr (Froude Number)
+Parfile.ins_gravY = -0.02
+
+# Restart, checkpoint, and plotting options
+Parfile.nend = 10000000
+Parfile.tmax = 200.0
+Parfile.restart = ".true."
+Parfile.checkpointFileNumber = 0
+Parfile.checkpointFileIntervalTime = 5.0
+Parfile.plotFileNumber = 0
+Parfile.plotFileIntervalTime = 1.0
