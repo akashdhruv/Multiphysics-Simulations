@@ -1,12 +1,12 @@
 # Velocity scale
-Parfile.ins_inflowVelScale = 4.0
+Parfile.ins_inflowVelScale = 1.0
 
 # Gravity
-Parfile.ins_gravX = -1.0
+Parfile.ins_gravX = -0.0001
 
 # Restart, checkpoint, and plotting options
 Parfile.nend = 10000000
-Parfile.tmax = 100.0
+Parfile.tmax = 200.0
 Parfile.restart = ".false."
 Parfile.checkpointFileNumber = 0
 Parfile.checkpointFileIntervalTime = 5.0

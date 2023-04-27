@@ -27,7 +27,6 @@ Heater.nucSeedRadius = 0.1
 
 # Inverse of Reynolds Number
 Parfile.ins_invReynolds = 0.0042
-Parfile.ins_gravX = -1.0
 
 # Gas density and viscosity scaled by liquid
 Parfile.mph_rhoGas = 0.0083
@@ -116,3 +115,8 @@ Parfile.flux_correct = ".true."
 Parfile.gr_amrexMG_composite_solve = ".TRUE."
 Parfile.gr_amrexMG_Tol = 1.3e-13
 Parfile.gr_amrexMG_max_iter = 200
+
+# Suggested tweaks by KW for improving performance
+# of GC fill
+Parfile.convertToConsvdForMeshCalls = ".FALSE."
+Parfile.convertToConsvdInMeshInterp = ".FALSE."
