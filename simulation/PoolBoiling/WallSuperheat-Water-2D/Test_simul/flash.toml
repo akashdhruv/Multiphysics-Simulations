@@ -1,0 +1,14 @@
+# Number of nucleation sites
+Heater.numSites = 100
+
+# Stefan number
+Parfile.mph_Stefan = 0.024
+
+# Restart, checkpoint, and plotting options
+Parfile.nend = 10000000
+Parfile.tmax = 100.0
+Parfile.restart = ".true."
+Parfile.checkpointFileNumber = 0
+Parfile.checkpointFileIntervalTime = 5.0
+Parfile.plotFileNumber = 0
+Parfile.plotFileIntervalTime = 1.0
