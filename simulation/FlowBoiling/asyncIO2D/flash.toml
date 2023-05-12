@@ -5,8 +5,8 @@ Heater.name = "flow_boiling"
 Heater.dim = 1
 
 # Heater dimensions
-Heater.xmin = -20.0
-Heater.xmax = 20.0
+Heater.xmin = -24.0
+Heater.xmax = 24.0
 Heater.zmin = -2.5
 Heater.zmax = 2.5
 Heater.ymin = 0.0
@@ -49,15 +49,15 @@ Parfile.mph_invWeber = 1.0
 Parfile.ht_Prandtl = 8.4
 
 # Outlet parameters
-Parfile.sim_outletBuffer = 1.0  # Outlet Buffer
+Parfile.sim_outletBuffer = 2.0  # Outlet Buffer
 Parfile.sim_heaterShowInfo = ".FALSE."
 
 # Grid dimensionality and geometry
 Parfile.geometry = "cartesian"
 
 # Size of computational volume
-Parfile.xmin = -21.0
-Parfile.xmax = 21.0
+Parfile.xmin = -25.0
+Parfile.xmax = 25.0
 Parfile.ymin = 0.0
 Parfile.ymax = 5.0
 Parfile.zmin = -2.5
@@ -97,9 +97,9 @@ Parfile.plot_var_6 = "smhv"
 Parfile.ignoreForcedPlot = ".TRUE."
 
 # AMR parameters
-Parfile.nblockx = 126
-Parfile.nblocky = 15
-Parfile.nblockz = 15
+Parfile.nblockx = 100
+Parfile.nblocky = 10
+Parfile.nblockz = 10
 
 # Set highest number for update
 # refinement step since in pseudo UG mode
