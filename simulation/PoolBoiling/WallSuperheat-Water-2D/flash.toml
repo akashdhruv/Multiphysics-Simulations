@@ -3,10 +3,10 @@ Heater.name = "pool_boiling"
 Heater.dim = 1
  
 # Heater dimensions
-Heater.xmin = -2.0
-Heater.xmax = 2.0
-Heater.zmin = -2.0
-Heater.zmax = 2.0
+Heater.xmin = -5.0
+Heater.xmax = 5.0
+Heater.zmin = -5.0
+Heater.zmax = 5.0
 Heater.ymin = 0.0
 Heater.ymax = 1e-13
 
@@ -29,7 +29,7 @@ Parfile.ins_gravY = -1.0
 # Gas density and viscosity scaled by liquid
 Parfile.mph_rhoGas = 0.000624
 Parfile.mph_muGas = 0.0435
-Parfile.mph_iPropSmear = 1.0
+Parfile.mph_iPropSmear = 1.5
 
 # Gas thermal conductivity and specific heat
 Parfile.mph_thcoGas = 0.037
@@ -72,11 +72,11 @@ Parfile.run_comment = "Pool Boiling problem"
 Parfile.log_file = "INS_Pool_Boiling.log"
 Parfile.basenm = "INS_Pool_Boiling_"
 Parfile.ins_cflFlg = 1
-Parfile.ins_cfl = 0.01
-Parfile.ins_sigma = 0.01
-Parfile.ins_dtSpec = 0.1e-3
-Parfile.dtinit = 0.1e-3
-Parfile.dtmax = 0.4e-3
+Parfile.ins_cfl = 0.008
+Parfile.ins_sigma = 0.008
+Parfile.ins_dtSpec = 0.1e-4
+Parfile.dtinit = 0.1e-4
+Parfile.dtmax = 0.4e-4
 Parfile.tstep_change_factor = 1.01
 Parfile.ins_pressureCorrect = ".false."
 
@@ -89,6 +89,7 @@ Parfile.plot_var_3 = "vely"
 Parfile.plot_var_4 = "dfun"
 Parfile.plot_var_5 = "temp"
 Parfile.plot_var_6 = "dust"
+Parfile.plot_var_7 = "rhoc"
 
 Parfile.ignoreForcedPlot = ".TRUE."
 

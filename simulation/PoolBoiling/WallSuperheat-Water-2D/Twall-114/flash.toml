@@ -1,5 +1,5 @@
 # Number of nucleation sites
-Heater.numSites = 45
+Heater.numSites = 10
 
 # Stefan number
 Parfile.mph_Stefan = 0.0262
@@ -11,4 +11,4 @@ Parfile.restart = ".false."
 Parfile.checkpointFileNumber = 0
 Parfile.checkpointFileIntervalTime = 5.0
 Parfile.plotFileNumber = 0
-Parfile.plotFileIntervalTime = 1.0
+Parfile.plotFileIntervalTime = 0.5
