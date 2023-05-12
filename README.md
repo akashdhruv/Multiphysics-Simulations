@@ -48,14 +48,15 @@ $ tree Boiling-Simulations
 ├── Jobfile
 ├── environment.sh
 ├── sites
-    ├── hello
-        ├── Makefile.h
+    ├── sedona
+        ├── Makefile.h.FlashX
+        ├── modules.sh
 ├── software
     ├── Jobfile
-    ├── Flash-X
-    ├── AMReX
-    ├── FlashKit
-    ├── HDF5
+    ├── setupFlashX.sh
+    ├── setupAMReX.sh
+    ├── setupFlashKit.sh
+    ├── setupHDF5.sh
 ├── simulation
     ├── PoolBoiling
         ├── Jobfile
@@ -68,8 +69,7 @@ $ tree Boiling-Simulations
             ├── flash.par
     ├── FlowBoiling
 ├── analysis
-    ├── Jobfile
-    ├── requirements.txt
+    ├── Example
 ```
 
 The directory tree is divided into three major components $\textemdash$ software, simulation, and analysis $\textemdash$ which rely on a common environment configuration defined in `environment.sh`. 
