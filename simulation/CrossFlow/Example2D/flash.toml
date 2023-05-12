@@ -12,7 +12,7 @@ Parfile.enableMaskedGCFill = ".FALSE."
 
 # Inverse of Reynolds Number
 Parfile.ins_invReynolds = 0.0001
-Parfile.ins_inflowVelScale = 1.5
+Parfile.ins_inflowVelScale = 2.0
 
 # 1/Fr**2, Fr (Froude Number)
 Parfile.ins_gravY = 0.0
