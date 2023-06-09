@@ -73,7 +73,7 @@ Parfile.plot_var_5 = "dust"
 Parfile.plot_var_6 = "omgm"
 
 Parfile.checkpointFileNumber = 0
-Parfile.checkpointFileIntervalTime = 5.0
+Parfile.checkpointFileIntervalTime = 0.5
 Parfile.checkpointFileIntervalStep = 500000
 
 Parfile.plotFileNumber = 0
