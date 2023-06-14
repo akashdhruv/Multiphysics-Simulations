@@ -23,6 +23,11 @@ else
 	BuildHDF5=true
 fi
 
+# Path to nvhpc installation
+if [ $(which nvcc) ]; then
+	export NVHPC_HOME=$(which nvcc | sed s/'\/bin\/nvcc'//)
+fi
+
 # Store path to amrex as environment variable
 export AMREX2D_HOME="$PROJECT_HOME/software/AMReX/install-$SiteName/2D"
 export AMREX3D_HOME="$PROJECT_HOME/software/AMReX/install-$SiteName/3D"
@@ -40,4 +45,5 @@ echo "HDF5_HOME=$HDF5_HOME"
 echo "FLASHX_HOME=$FLASHX_HOME"
 echo "AMREX2D_HOME=$AMREX2D_HOME"
 echo "AMREX3D_HOME=$AMREX3D_HOME"
+echo "NVHPC_HOME=$NVHPC_HOME"
 echo "-------------------------------------------------------------"
