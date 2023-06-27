@@ -6,7 +6,7 @@
       for boiling simulations.
 
 -  [ ] Restart fails for simulation/PoolBoiling/SingleBubble. Needs
-      investigation
+      investigation.
 
 -  [ ] Look into IO and restarting. Running production simulations on
       coarser grid and then refining during restart. See file
@@ -14,15 +14,15 @@
       hack.
 
 -  [ ] Facevar updates to leverage divergence free interpolation in AMReX.
-      Running simulations with higher refinement
+      Running simulations with higher refinement.
 
--  [ ] Bittree AMReX updates
+-  [ ] Bittree AMReX updates.
 
 -  [ ] Guard cells filling time has increased after adding more grid
       variables in physics/Multiphase, physics/IncompNS, and bc fill
-      calls to Driver_evolveAll.F90 Reduce this by adjusting algorithm
+      calls to Driver_evolveAll.F90 Reduce this by adjusting algorithm.
 
 -  [ ] Immersed boundary alogrithm with ANN - use normal vectors from stl
-      file
+      file.
 
--  [ ] Neural Poisson
+-  [ ] Neural Poisson.
