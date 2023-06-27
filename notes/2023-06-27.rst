@@ -4,5 +4,5 @@
 
 [-] Introduce performance log for unittests in BoxKit.
 
-[] Performance of Navier-Stokes solvers, GPU vs CPU, AMR vs non-uniform
+[ ] Performance of Navier-Stokes solvers, GPU vs CPU, AMR vs non-uniform
    grid.
