@@ -2,7 +2,6 @@
  General notes for tasks
 #########################
 
-[-] Introduce performance log for unittests in BoxKit.
-
-[ ] Performance of Navier-Stokes solvers, GPU vs CPU, AMR vs non-uniform
-   grid.
+-  [x] Introduce performance log for unittests in BoxKit.
+-  [ ] Performance of Navier-Stokes solvers, GPU vs CPU, AMR vs non-uniform
+      grid.
