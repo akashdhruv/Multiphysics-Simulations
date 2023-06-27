@@ -2,5 +2,5 @@
  Notes about building using CUDA compilers
 ###########################################
 
--  [x] AMReX options --with-cuda=yes
--  [x] HDF5 options CFLAGS="-fPIC" FCFLAGS="-fPIC" FFLAGS="-fPIC"
+-  AMReX options --with-cuda=yes
+-  HDF5 options CFLAGS="-fPIC" FCFLAGS="-fPIC" FFLAGS="-fPIC"
