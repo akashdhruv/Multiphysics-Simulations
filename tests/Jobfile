@@ -5,5 +5,11 @@ job:
   submit:
     - testRun.sh
   clean:
+    - "*.out"
+    - test.info
+    - config
+    - execfile
+    - job.submit
+    - job.setup
     - job.output
     - flashxtest_api.log
