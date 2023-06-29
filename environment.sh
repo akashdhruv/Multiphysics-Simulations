@@ -9,35 +9,32 @@ export PROJECT_HOME=$(realpath .)
 SiteHome="$PROJECT_HOME/sites/$SiteName"
 
 # Load modules from the site directory
-source $SiteHome/modules.sh
-
-# Set MPI_HOME by quering path loaded by site module
-export MPI_HOME=$(which mpicc | sed s/'\/bin\/mpicc'//)
+source $SiteHome/environment.sh
 
 # Path to parallel HDF5 installtion with fortran support
-if [ $(which h5pfc) ]; then
-	export HDF5_HOME=$(which h5pfc | sed s/'\/bin\/h5pfc'//)
+if [ $HDF5_HOME ]; then
 	BuildHDF5=false
 else
 	export HDF5_HOME="$PROJECT_HOME/software/HDF5/install-$SiteName"
 	BuildHDF5=true
 fi
 
-# Path to nvhpc installation
-if [ $(which nvcc) ]; then
-	export NVHPC_HOME=$(which nvcc | sed s/'\/bin\/nvcc'//)
-fi
-
 # Store path to amrex as environment variable
 export AMREX2D_HOME="$PROJECT_HOME/software/AMReX/install-$SiteName/2D"
 export AMREX3D_HOME="$PROJECT_HOME/software/AMReX/install-$SiteName/3D"
+
+# Store path to Hypre
+export HYPRE_HOME="$PROJECT_HOME/software/HYPRE/install-$SiteName"
+export LD_LIBRARY_PATH="$HYPRE_HOME/lib"
+export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
 # Path to Flash-X
 export FLASHX_HOME="$PROJECT_HOME/software/Flash-X"
 
 # Output information to stdout
-echo "-------------------------------------------------------------"
+echo "---------------------------------------------------------------------------------------"
 echo "Execution Environment:"
+echo "---------------------------------------------------------------------------------------"
 echo "PROJECT_HOME=$PROJECT_HOME"
 echo "SITE_HOME=$SiteHome"
 echo "MPI_HOME=$MPI_HOME"
@@ -46,6 +43,7 @@ echo "FLASHX_HOME=$FLASHX_HOME"
 echo "AMREX2D_HOME=$AMREX2D_HOME"
 echo "AMREX3D_HOME=$AMREX3D_HOME"
 echo "NVHPC_HOME=$NVHPC_HOME"
+echo "HYPRE_HOME=$HYPRE_HOME"
 echo "FLASHTEST_MAIN_ARCHIVE=$FLASHTEST_MAIN_ARCHIVE"
 echo "FLASHTEST_LOCAL_ARCHIVE=$FLASHTEST_LOCAL_ARCHIVE"
-echo "-------------------------------------------------------------"
+echo "---------------------------------------------------------------------------------------"

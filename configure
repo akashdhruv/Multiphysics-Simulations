@@ -4,13 +4,8 @@ import click
 
 
 @click.command(name="configure")
-@click.option("--site", "-s", type=str, required=True, help="Site Directory")
-@click.option("--amrex", is_flag=True, help="With AMReX")
-@click.option("--flashx", is_flag=True, help="With Flash-X")
-@click.option("--flashkit", is_flag=True, help="With FlashKit")
-@click.option("--hdf5", is_flag=True, help="With HDF5")
-@click.option("--all", is_flag=True, help="With All")
-def configure(site, amrex, flashx, flashkit, hdf5, all):
+@click.option("--site", "-s", type=str, help="Site Directory")
+def configure(site):
     """
     \b
     Configuration command to generate config.sh
@@ -18,47 +13,10 @@ def configure(site, amrex, flashx, flashkit, hdf5, all):
     """
     print("Generating configuration file")
 
-    amrex_tag = "cff96a9"
-    flashx_tag = "main"
-    flashkit_tag = "364c99d"
-    hdf5_tag = "93754ca"
-
     with open("config.sh", "w") as config_file:
 
         config_file.write("# This file is generated using configuration script\n")
-        config_file.write("\n")
-
-        config_file.write("# Site directory, refer to sites/README.md for details\n")
         config_file.write(f'SiteName="{site}"\n')
-        config_file.write("\n")
-
-        if amrex or all:
-            config_file.write("AMReX_Enable=true\n")
-            config_file.write(f'AMReX_TAG="{amrex_tag}"\n')
-        else:
-            config_file.write("AMReX_Enable=false\n")
-        config_file.write("\n")
-
-        if flashx or all:
-            config_file.write("FlashX_Enable=true\n")
-            config_file.write(f'FlashX_TAG="{flashx_tag}"\n')
-        else:
-            config_file.write("FlashX_Enable=false\n")
-        config_file.write("\n")
-
-        if flashkit or all:
-            config_file.write("FlashKit_Enable=true\n")
-            config_file.write(f'FlashKit_TAG="{flashkit_tag}"\n')
-        else:
-            config_file.write("FlashKit_Enable=false\n")
-        config_file.write("\n")
-
-        if hdf5 or all:
-            config_file.write("HDF5_Enable=true\n")
-            config_file.write(f'HDF5_TAG="{hdf5_tag}"\n')
-        else:
-            config_file.write("HDF5_Enable=false\n")
-
 
 if __name__ == "__main__":
     configure()

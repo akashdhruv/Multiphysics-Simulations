@@ -49,7 +49,7 @@ Parfile.mph_invWeber = 1.0
 Parfile.ht_Prandtl = 7
 
 # Outlet parameters
-Parfile.sim_outletSink = -1.0 # Outlet level set sink
+Parfile.sim_outletSink = -1.0  # Outlet level set sink
 Parfile.sim_outletBuffer = 1.0  # Outlet buffer region
 Parfile.sim_heaterShowInfo = ".FALSE."
 
@@ -78,7 +78,7 @@ Parfile.log_file = "INS_Pool_Boiling.log"
 Parfile.basenm = "INS_Pool_Boiling_"
 Parfile.restart = ".false."
 Parfile.nend = 10000000
-Parfile.tmax = 250
+Parfile.tmax = 10
 Parfile.ins_cflFlg = 0
 Parfile.ins_cfl = 0.05
 Parfile.ins_sigma = 0.05
@@ -134,9 +134,21 @@ Parfile.gr_amrexMG_composite_solve = ".TRUE."
 Parfile.gr_amrexMG_Tol = 1e-13
 Parfile.gr_amrexMG_max_iter = 200
 
+# Paramesh parameters
+Parfile.gr_pmRpDivergenceFree = 1
+Parfile.gr_pmRpNfieldDivf = 2
+Parfile.gr_pmRpConsvFluxes = ".TRUE."
+Parfile.gr_pmRpConsvFluxDensities = ".FALSE."
+
+# Settings for guard cell filling
+Parfile.gr_bcEnableApplyMixedGds = ".FALSE."
+Parfile.convertToConsvdForMeshCalls = ".FALSE."
+Parfile.convertToConsvdInMeshInterp = ".FALSE."
+Parfile.enableMaskedGCFill = ".FALSE."
+
 # HYPRE Poisson Solver Parameters
 Parfile.gr_hyprePrintSolveInfo = ".FALSE."
 Parfile.gr_hyprePcType = "HYPRE_AMG"
 Parfile.gr_hypreSolverType = "HYPRE_BICGSTAB"
 Parfile.gr_hypreRelTol = 1.0e-12
-Parfile.gr_hypreFloor  = 1.0e-16
+Parfile.gr_hypreFloor = 1.0e-16

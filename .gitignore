@@ -16,5 +16,6 @@ software/AMReX
 software/Flash-X
 software/HDF5
 software/FlashKit
+software/HYPRE
 boxmem
 *jobnode.archive*

@@ -1,16 +1,11 @@
 # Bash script for `jobrunner` to install AMReX
 
 # Setup AMReX
-if [ "$AMReX_Enable" = true ]; then
-
-	if [ ! -d "AMReX" ]; then
-		git clone git@github.com:AMReX-Codes/amrex --branch development AMReX && cd AMReX
-	else
-		cd AMReX && git checkout development && git pull
-	fi
+if [ ! -d "AMReX" ]; then
+	git clone git@github.com:AMReX-Codes/amrex --branch development AMReX && cd AMReX
 
 	# checkout desired branch
-	git checkout $AMReX_TAG
+	git checkout cff96a9
 
 	# configure and install amrex in 2D
 	make clean
