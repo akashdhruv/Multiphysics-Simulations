@@ -12,10 +12,11 @@ core*
 __pycache__
 *.ipynb_checkpoints
 config.sh
-software/AMReX
-software/Flash-X
-software/HDF5
-software/FlashKit
-software/HYPRE
+software/amrex/AMReX
+software/flashx/Flash-X
+software/hdf5/HDF5
+software/flashkit/FlashKit
+software/hypre/HYPRE
+software/ann/ANN
 boxmem
 *jobnode.archive*

@@ -2,8 +2,4 @@
 
 job:
   setup:
-    - setupHDF5.sh
-    - setupAMReX.sh
     - setupFlashKit.sh
-    - setupHYPRE.sh
-    - setupFlashX.sh

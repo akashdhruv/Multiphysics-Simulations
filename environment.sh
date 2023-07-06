@@ -15,21 +15,26 @@ source $SiteHome/environment.sh
 if [ $HDF5_HOME ]; then
 	BuildHDF5=false
 else
-	export HDF5_HOME="$PROJECT_HOME/software/HDF5/install-$SiteName"
+	export HDF5_HOME="$PROJECT_HOME/software/hdf5/HDF5/install-$SiteName"
 	BuildHDF5=true
 fi
 
 # Store path to amrex as environment variable
-export AMREX2D_HOME="$PROJECT_HOME/software/AMReX/install-$SiteName/2D"
-export AMREX3D_HOME="$PROJECT_HOME/software/AMReX/install-$SiteName/3D"
+export AMREX2D_HOME="$PROJECT_HOME/software/amrex/AMReX/install-$SiteName/2D"
+export AMREX3D_HOME="$PROJECT_HOME/software/amrex/AMReX/install-$SiteName/3D"
 
 # Store path to Hypre
-export HYPRE_HOME="$PROJECT_HOME/software/HYPRE/install-$SiteName"
+export HYPRE_HOME="$PROJECT_HOME/software/hypre/HYPRE/install-$SiteName"
 export LD_LIBRARY_PATH="$HYPRE_HOME/lib"
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
+# Store path to ANN
+export ANN_HOME="$PROJECT_HOME/software/ann/ANN"
+export LD_LIBRARY_PATH="$ANN_HOME/lib"
+export LIBRARY_PATH="$LD_LIBRARY_PATH"
+
 # Path to Flash-X
-export FLASHX_HOME="$PROJECT_HOME/software/Flash-X"
+export FLASHX_HOME="$PROJECT_HOME/software/flashx/Flash-X"
 
 # Output information to stdout
 echo "---------------------------------------------------------------------------------------"

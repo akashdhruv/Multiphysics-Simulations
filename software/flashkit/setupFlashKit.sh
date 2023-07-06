@@ -4,7 +4,7 @@ if [ ! -d "FlashKit" ]; then
 
 	# checkout desired branch
 	git checkout 364c99d
-
-	# install in development mode
-	python3 setup.py develop --user
 fi
+
+# install in development mode
+python3 setup.py develop --user
