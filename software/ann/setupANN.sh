@@ -6,8 +6,12 @@ if [ ! -d "ANN" ]; then
 
 	# checkout desired branch
 	git checkout main
+
+else
+	cd ANN
 fi
 
 # configure and install ANN
+make realclean
 make linux-g++
 make install

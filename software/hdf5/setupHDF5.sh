@@ -7,6 +7,8 @@ if [[ "$BuildHDF5" = true ]]; then
 
 		# checkout desired branch
 		git checkout 93754ca
+	else
+		cd HDF5
 	fi
 
 	# configure HDF5

@@ -1,3 +1,14 @@
+#!/bin/bash
+
+JobWorkDir="/home/akash/Desktop/Akash/Workbench/Multiphase-Simulations/software/ann"
+
+cd /home/akash/Desktop/Akash/Workbench/Multiphase-Simulations
+
+# This file is generated using configuration script
+SiteName="sedona"
+
+cd /home/akash/Desktop/Akash/Workbench/Multiphase-Simulations
+
 # Bash file to load modules and set environment
 # variables for compilers and external libraries
 
@@ -59,3 +70,23 @@ echo "BITTREE_3D_HOME=$BITTREE_3D_HOME"
 echo "FLASHTEST_MAIN_ARCHIVE=$FLASHTEST_MAIN_ARCHIVE"
 echo "FLASHTEST_LOCAL_ARCHIVE=$FLASHTEST_LOCAL_ARCHIVE"
 echo "---------------------------------------------------------------------------------------"
+
+cd /home/akash/Desktop/Akash/Workbench/Multiphase-Simulations/software/ann
+
+# Bash script for `jobrunner` to install AMReX
+
+# Setup AMReX
+if [ ! -d "ANN" ]; then
+	git clone git@github.com:Box-Tools/ANN.git && cd ANN
+
+	# checkout desired branch
+	git checkout main
+
+else
+	cd ANN
+fi
+
+# configure and install ANN
+make realclean
+make linux-g++
+make install

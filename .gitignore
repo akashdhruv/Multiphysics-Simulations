@@ -18,5 +18,6 @@ software/hdf5/HDF5
 software/flashkit/FlashKit
 software/hypre/HYPRE
 software/ann/ANN
+software/bittree/Bittree
 boxmem
 *jobnode.archive*

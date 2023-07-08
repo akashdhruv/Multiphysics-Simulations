@@ -6,6 +6,8 @@ if [ ! -d "HYPRE" ]; then
 
 	# checkout desired branch
 	git checkout v2.22.0
+else
+	cd HYPRE
 fi
 
 # configure and install

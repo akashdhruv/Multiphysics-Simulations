@@ -6,6 +6,9 @@ if [ ! -d "AMReX" ]; then
 
 	# checkout desired branch
 	git checkout cff96a9
+
+else
+	cd AMReX
 fi
 
 # configure and install amrex in 2D

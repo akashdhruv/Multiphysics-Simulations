@@ -4,6 +4,8 @@ if [ ! -d "FlashKit" ]; then
 
 	# checkout desired branch
 	git checkout 364c99d
+else
+	cd FlashKit
 fi
 
 # install in development mode
