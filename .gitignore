@@ -21,3 +21,4 @@ software/ann/ANN
 software/bittree/Bittree
 boxmem
 *jobnode.archive*
+!software/flashx

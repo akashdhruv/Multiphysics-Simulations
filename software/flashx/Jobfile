@@ -1,0 +1,5 @@
+# TOML configuration file for `jobrunner`.
+
+job:
+  setup:
+    - setupFlashX.sh
