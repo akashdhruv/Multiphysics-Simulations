@@ -5,7 +5,7 @@ TestSiteName=multiphase.simulations && mkdir -pv $FLASHX_HOME/sites/$TestSiteNam
 
 # Link makefiles to use the makefile from current site
 # directory
-ln -sf $SiteHome/Makefile.h.FlashX $FLASHX_HOME/sites/$TestSiteName/Makefile.h
+ln -sf $SiteHome/Makefile.h $FLASHX_HOME/sites/$TestSiteName/Makefile.h
 
 # Initialize config and execfile
 flashxtest init -z $FLASHX_HOME \
