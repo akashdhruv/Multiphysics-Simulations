@@ -1,5 +1,9 @@
-# Load GCC and python module
-module load gcc/9.1.0
+echo "Loading environment.sh for sites/summit"
+
+# Load GCC and module
+module load gcc/9.3.0
+
+# python module
 module load python/3.8-anaconda3
 
 # Set MPI_HOME by quering path loaded by site module
