@@ -15,8 +15,10 @@ source $SiteHome/environment.sh
 if [ $HDF5_HOME ]; then
 	BuildHDF5=false
 else
-	export HDF5_HOME="$PROJECT_HOME/software/hdf5/HDF5/install-$SiteName"
 	BuildHDF5=true
+	export HDF5_HOME="$PROJECT_HOME/software/hdf5/HDF5/install-$SiteName"
+	export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HDF5_HOME/lib"
+	export LIBRARY_PATH="$LD_LIBRARY_PATH"
 fi
 
 # Store path to bittree
@@ -29,7 +31,7 @@ export AMREX3D_HOME="$PROJECT_HOME/software/amrex/AMReX/install-$SiteName/3D"
 
 # Store path to Hypre
 export HYPRE_HOME="$PROJECT_HOME/software/hypre/HYPRE/install-$SiteName"
-export LD_LIBRARY_PATH="$HYPRE_HOME/lib"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HYPRE_HOME/lib"
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
 # Store path to ANN
@@ -58,4 +60,5 @@ echo "BITTREE_2D_HOME=$BITTREE_2D_HOME"
 echo "BITTREE_3D_HOME=$BITTREE_3D_HOME"
 echo "FLASHTEST_MAIN_ARCHIVE=$FLASHTEST_MAIN_ARCHIVE"
 echo "FLASHTEST_LOCAL_ARCHIVE=$FLASHTEST_LOCAL_ARCHIVE"
+echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 echo "---------------------------------------------------------------------------------------"
