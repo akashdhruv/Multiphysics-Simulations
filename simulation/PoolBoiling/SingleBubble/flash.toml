@@ -131,7 +131,7 @@ Parfile.flux_correct = ".true."
 
 # AMReX Poisson Solver Parameters
 Parfile.gr_amrexMG_composite_solve = ".TRUE."
-Parfile.gr_amrexMG_Tol = 3e-12
+Parfile.gr_amrexMG_Tol = 3e-12  # use tol for production runs 1e-13
 Parfile.gr_amrexMG_max_iter = 200
 
 # Paramesh parameters
