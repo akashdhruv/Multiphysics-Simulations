@@ -3,7 +3,7 @@ cd $JobWorkDir
 
 if [[ $SiteName == "summit" ]]; then
 
-	echo Calculating resources for ${FlashSite##*/}
+	echo Calculating resources for $SiteName
 
 	# this sets up some variables to run jsrun,
 	# with 6 resource sets per node,
@@ -19,7 +19,7 @@ if [[ $SiteName == "summit" ]]; then
 	export NRS=$(($NNODES * $NRS_PER_NODE))
 	export OMP_NUM_THREADS=1
 
-	echo Running on ${FlashSite##*/}
+	echo Running on $SiteName
 
 	stdbuf -o0 jsrun -n ${NRS} \
 		-r ${NRS_PER_NODE} \
@@ -30,6 +30,6 @@ if [[ $SiteName == "summit" ]]; then
 		$JobWorkDir/job.target
 else
 
-	echo Running on ${FlashSite##*/}
+	echo Running on $SiteName
 	mpirun job.target
 fi

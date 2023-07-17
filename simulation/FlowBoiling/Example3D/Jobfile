@@ -9,7 +9,6 @@ job:
     - flashOptions.sh
     - flashBuild.sh
   submit:
-    #- flashRestart.sh
     - flashRun.sh
   input:
     - flash.toml
