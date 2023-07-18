@@ -1,4 +1,4 @@
-## Notes about code performance, bugs, and improvements.
+## General notes about code performance, bugs, and improvements.
 
 - [ ] Compile AMReX in GPU mode and measure performance of Poisson solver
   for boiling simulations.
@@ -24,3 +24,24 @@
   file.
 
 - \[ \] Neural Poisson.
+
+- \[ \] Improve calculation of curvature, make it smoother. Current
+  implementation leads to local fluctuations in pressure.
+
+- \[ \] Read about turbulence and develop statistical operators for Flash-X
+  and post-processing.
+
+- \[ \] Modelling microlayer and material properties in boiling.
+
+## FlowBoiling 3D simulation performance
+
+There are at total of 100 x 10 x 10 = 10000 blocks in the simulation with 
+Performance run on summit used 25 nodes with 42 processes per node resulting 
+in 1050 processes.
+
+Performance metrics:
+
+- simulation start time: 
+- simulation end time:
+- wall time: 2
+- node hours: 25*2

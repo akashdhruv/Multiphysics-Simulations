@@ -1,4 +1,4 @@
-## General notes for tasks
+## Tasks
 
 - \[x\] Introduce performance log for unittests in BoxKit.
 
@@ -6,3 +6,5 @@
   non-uniform grid.
 
 - \[ \] Direct air capture simulations
+
+- \[ \] `yt` support
