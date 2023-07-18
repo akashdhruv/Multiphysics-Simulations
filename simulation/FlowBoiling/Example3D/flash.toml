@@ -131,10 +131,24 @@ Parfile.ins_gravY = -1.0
 # Restart, checkpoint, and plotting options
 Parfile.nend = 1200000
 Parfile.tmax = 200.0
+Parfile.checkpointFileIntervalTime = 5.0
+Parfile.plotFileIntervalTime = 0.1
+
+# Write checkpoint file every xxxx
+# seconds of wall clock time. This
+# is useful to manage queue time. The
+# value below will write checkpoint
+# every 6000 seconds
+Parfile.wall_clock_checkpoint = 6000
+
+# Cycle through checkpoints 0-1 in
+# this case. This reduces the number
+# of checkpoints that are written.
+# Cyling just overwrites previous
+# checkpoints and only stores
+# the latest.
+Parfile.rolling_checkpoint = 2
+
 Parfile.restart = ".true."
 Parfile.checkpointFileNumber = 0
-Parfile.checkpointFileIntervalTime = 5.0
 Parfile.plotFileNumber = 47
-Parfile.wall_clock_checkpoint = 6000
-Parfile.rolling_checkpoint = 2
-Parfile.plotFileIntervalTime = 0.1
