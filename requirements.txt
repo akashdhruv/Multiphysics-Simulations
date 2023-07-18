@@ -2,4 +2,5 @@ click
 boxkit
 pyjobrunner
 pymaple
+scipy==1.9.3
 git+ssh://git@github.com/Flash-X/Flash-X-Test.git@main

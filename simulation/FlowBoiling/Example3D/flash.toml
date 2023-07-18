@@ -2,27 +2,27 @@
 
 # Heater name and number of heaters
 Heater.name = "flow_boiling"
-# Heater.dim = 2
+Heater.dim = 2
 
 # Heater dimensions
-# Heater.xmin = -24.0
-# Heater.xmax = 24.0
-# Heater.zmin = -2.5
-# Heater.zmax = 2.5
-# Heater.ymin = 0.0
-# Heater.ymax = 1e-13
+Heater.xmin = -24.0
+Heater.xmax = 24.0
+Heater.zmin = -2.5
+Heater.zmax = 2.5
+Heater.ymin = 0.0
+Heater.ymax = 1e-13
 
 # Wall temperature
-# Heater.wallTemp = 1.0
+Heater.wallTemp = 1.0
 
 # Contact angle information
-# Heater.advAngle = 90.0
-# Heater.rcdAngle = 45.0
-# Heater.velContact = 0.2
-# Heater.nucWaitTime = 0.4
+Heater.advAngle = 90.0
+Heater.rcdAngle = 45.0
+Heater.velContact = 0.2
+Heater.nucWaitTime = 0.4
 
 # Number of sites
-# Heater.numSites = 1500
+Heater.numSites = 1500
 Heater.nucSeedRadius = 0.1
 
 # Inverse of Reynolds Number
@@ -132,9 +132,9 @@ Parfile.ins_gravY = -1.0
 Parfile.nend = 1200000
 Parfile.tmax = 200.0
 Parfile.restart = ".true."
-Parfile.checkpointFileNumber = 1
+Parfile.checkpointFileNumber = 0
 Parfile.checkpointFileIntervalTime = 5.0
-Parfile.plotFileNumber = 21
-Parfile.wall_clock_checkpoint = 5400
+Parfile.plotFileNumber = 47
+Parfile.wall_clock_checkpoint = 6000
 Parfile.rolling_checkpoint = 2
 Parfile.plotFileIntervalTime = 0.1
