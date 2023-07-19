@@ -151,4 +151,4 @@ Parfile.rolling_checkpoint = 2
 
 Parfile.restart = ".true."
 Parfile.checkpointFileNumber = 0
-Parfile.plotFileNumber = 47
+Parfile.plotFileNumber = 0
