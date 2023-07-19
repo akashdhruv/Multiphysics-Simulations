@@ -35,13 +35,25 @@
 
 ## FlowBoiling 3D simulation performance
 
-There are at total of 100 x 10 x 10 = 10000 blocks in the simulation with 
+There are at total of 100 x 10 x 10 = 10000 blocks in the simulation.
 Performance run on summit used 25 nodes with 42 processes per node resulting 
 in 1050 processes.
 
+Scaling parameters:
+- length scale: 1mm
+- velocity scale: 0.1 m/s
+- time scale: 10 milliseconds
+
 Performance metrics:
 
-- simulation start time: 
-- simulation end time:
-- wall time: 2
-- node hours: 25*2
+- time per iteration: 1 second wall time
+- simulation start time: 4. 
+- simulation end time: 5.
+- wall time: 2+2+2 = 6 hours
+- node hours: 25*(wall time) = 150 node-hours 
+- physical time: 10 milliseconds
+
+Length scales:
+- Domain: 50 mm x 5 mm x 5mm = 5 cm x 0.5 cm x 0.5 cm
+- Grid spacing: 0.031 mm = 31 micrometers
+- Nucleation radius: 0.1 mm = 100 micrometers
