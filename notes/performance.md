@@ -48,10 +48,10 @@ Performance metrics:
 
 - time per iteration: 1 second wall time
 - simulation start time: 4. 
-- simulation end time: 5.
-- wall time: 2+2+2 = 6 hours
-- node hours: 25*(wall time) = 150 node-hours 
-- physical time: 10 milliseconds
+- simulation end time: 6.
+- wall time: 2+2+2+2 = 8 hours
+- node hours: 25*(wall time) = 200 node-hours 
+- physical time: 20 milliseconds
 
 Length scales:
 - Domain: 50 mm x 5 mm x 5mm = 5 cm x 0.5 cm x 0.5 cm
