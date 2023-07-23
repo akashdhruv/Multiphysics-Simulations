@@ -19,3 +19,5 @@
 
 - \[ \] Immersed boundary alogrithm with ANN - use normal vectors from stl
   file.
+
+- \[x\] Mechanics of external simulation directory see simulation/ChannelFlow/FlashExternal
