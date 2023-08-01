@@ -49,34 +49,35 @@ $ tree Boiling-Simulations
 ├── environment.sh
 ├── sites
     ├── sedona
-        ├── Makefile.h.FlashX
-        ├── modules.sh
+        ├── Makefile.h
+        ├── environment.sh
 ├── software
-    ├── Jobfile
-    ├── setupFlashX.sh
-    ├── setupAMReX.sh
-    ├── setupFlashKit.sh
-    ├── setupHDF5.sh
+    ├── flashx
+    ├── hdf5
+    ├── hypre
+    ├── ann
+    ├── flashkit
+    ├── amrex
+        ├── Jobfile
+        ├── setupAMReX.sh
 ├── simulation
     ├── PoolBoiling
-        ├── Jobfile
-        ├── flashOptions.sh
-        ├── example2D
+        ├── Example2D
             ├── Jobfile
             ├── flashOptions.sh
             ├── flashBuild.sh
             ├── flashRun.sh
-            ├── flash.par
+            ├── flash.toml
     ├── FlowBoiling
 ├── analysis
-    ├── Example
+    ├── Examples
 ```
 
 The directory tree is divided into three major components $\textemdash$ software, simulation, and analysis $\textemdash$ which rely on a common environment configuration defined in `environment.sh`. 
 
-The ``software/`` component provides all the software packages as submodules along with corresponding bash scripts and a Jobfile to setup and install them.
+The ``software/`` component provides scripts to install software packages with compatible configuration. 
 
-The ``simulation/`` component contains specific simulations as directory objects, with the ability to configure each of them with different flavors. As an example, ``simulation/PoolBoiling`` can be configured for 2D and 3D problems by creating sub-directories ``simulation/PoolBoiling/example2D`` and ``simulation/PoolBoiling/example3D`` with their respective options, Jobfiles, and commands.
+The ``simulation/`` component contains specific simulations as directory objects, with the ability to configure each of them with different flavors. As an example, ``simulation/PoolBoiling`` can be configured for 2D and 3D problems by creating sub-directories ``simulation/PoolBoiling/Example2D`` and ``simulation/PoolBoiling/Example3D`` with their respective options, Jobfiles, and commands.
 
 The ``analysis/`` component is designed to setup data analysis and machine learning workflows and is currently a work in progress.
 
@@ -85,7 +86,10 @@ The ``analysis/`` component is designed to setup data analysis and machine learn
 Once a user has installed necessary libaries/tools, i.e., Jobrunner, MPI, HDF5, and ParaView, and designed their customized `environment.sh`, they can install the remaining software stack by running the following command from the project root directory,
 
 ```
-jobrunner setup software
+jobrunner setup software/amrex
+jobrunner setup software/flashx
+jobrunner setup software/flashkit
+...
 ```
 
 This command will checkout appropriate SHA-1 for Flash-X, AMReX, and FlashKit, and install them using base libraries and paths provided in ``environment.sh``
@@ -93,13 +97,13 @@ This command will checkout appropriate SHA-1 for Flash-X, AMReX, and FlashKit, a
 Setting up a simulation is done in similar way by running setup command as,
 
 ```
-jobrunner setup simulation/PoolBoiling/example2D
+jobrunner setup simulation/PoolBoiling/Example2D
 ```
 
 and then running it using,
 
 ```
-jobrunner submit simulation/PoolBoiling/example2D
+jobrunner submit simulation/PoolBoiling/Example2D
 ```
 
 Make sure to edit Jobfiles as desired to change/update your schedular configuration.
