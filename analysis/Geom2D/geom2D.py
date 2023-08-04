@@ -44,6 +44,7 @@ def CreateFlashH5(filepath, elems):
     imboundFile = h5py.File(filepath, 'w')
 
     imboundFile.create_dataset("numElems", data=[len(elems)])
+    imboundFile.create_dataset("dims", data=[2])
 
     imboundFile.create_dataset("elems/xA", data=[elem.pA[0] for elem in elems])
     imboundFile.create_dataset("elems/yA", data=[elem.pA[1] for elem in elems])
