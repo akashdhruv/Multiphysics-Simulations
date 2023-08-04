@@ -6,7 +6,7 @@ class Elem:
     def __init__(self, pA=[], pB=[]):
         self.pA = numpy.array(pA)
         self.pB = numpy.array(pB)
-        self.pC = (self.pA + self.pB) / 2.0
+        self.center = (self.pA + self.pB) / 2.0
         self.normal = numpy.array([pA[1] - pB[1], pB[0] - pA[0]])
         self.tangent = numpy.array([pB[0] - pA[0], pB[1] - pA[1]])
 
@@ -21,7 +21,7 @@ class Elem:
         transform = numpy.array(transform)
         self.pA = self.pA + transform
         self.pB = self.pB + transform
-        self.pC = self.pC + transform
+        self.center = self.center + transform
 
     def rotate(self, alpha):
         rotation = numpy.zeros((2, 2))
@@ -35,10 +35,18 @@ class Elem:
 
         self.pA = numpy.matmul(self.pA, rotation)
         self.pB = numpy.matmul(self.pB, rotation)
-        self.pC = numpy.matmul(self.pC, rotation)
+        self.center = numpy.matmul(self.center, rotation)
         self.normal = numpy.matmul(self.normal, rotation)
         self.tangent = numpy.matmul(self.tangent, rotation)
 
 
 def CreateFlashH5(filepath, elems):
-    pass
+    imboundFile = h5py.File(filepath, 'w')
+
+    imboundFile.create_dataset("numElems", data=[len(elems)])
+    imboundFile.create_dataset("elems/pA", data=[elem.pA for elem in elems])    
+    imboundFile.create_dataset("elems/pB", data=[elem.pB for elem in elems])
+    imboundFile.create_dataset("elems/center", data=[elem.center for elem in elems])
+    imboundFile.create_dataset("elems/normal", data=[elem.normal for elem in elems])
+
+    imboundFile.close()
