@@ -1,0 +1,14 @@
+#	Config file for the INS module.
+#       Note: This is a staggered finite difference mesh algorithm.
+
+REQUIRES physics/IncompNS/IncompNSMain/constDens
+REQUIRES physics/IncompNS/IncompNSExtras
+
+USESETUPVARS SimForceInOut
+
+IF SimForceInOut
+    REQUIRES Simulation/SimulationForcing/incompFlow/Inlet
+    REQUIRES Simulation/SimulationForcing/incompFlow/Outlet
+ENDIF
+
+GUARDCELLS 2
