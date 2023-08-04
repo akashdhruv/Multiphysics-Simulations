@@ -12,6 +12,7 @@ ZLIB_PATH    =
 PAPI_PATH    =
 NCMPI_PATH   =
 AMREX_PATH   = $(AMREX$(NDIM)D_HOME)
+ANN_PATH     = $(ANN_HOME)
 
 #----------------------------------------------------------------------------
 # Compiler and linker commands
@@ -52,6 +53,7 @@ FFLAGS_TEST  = -ggdb -c -fdefault-real-8 -fdefault-double-8 \
 
 FFLAGS_HYPRE = -I${HYPRE_PATH}/include
 FFLAGS_AMREX = -I${AMREX_PATH}/include
+FFLAGS_ANN   = -I${ANN_PATH}/include
 FFLAGS_HDF5  = -DH5_USE_18_API
 F90FLAGS     =
 
@@ -71,6 +73,7 @@ CFLAGS_TEST  = -c
 
 CFLAGS_HDF5  = -DH5_USE_18_API
 CFLAGS_AMREX = -I${AMREX_PATH}/include
+CFLAGS_ANN   = -I${ANN_PATH}/include
 CFLAGS_HYPRE = -I${HYPRE_PATH}/include
 PAPI_FLAGS   = 
 
@@ -106,6 +109,7 @@ LIB_MPE    =
 LIB_NCMPI  =
 LIB_HYPRE  = -L${HYPRE_PATH}/lib -lHYPRE
 LIB_AMREX  = -L${AMREX_PATH}/lib -lamrex -lpthread
+LIB_ANN    = -L${ANN_PATH}/lib -lANN
 LIB_STDCXX = -lstdc++
 LIB_LAPACK = -llapack -lblas
 
