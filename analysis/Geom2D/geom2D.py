@@ -44,9 +44,17 @@ def CreateFlashH5(filepath, elems):
     imboundFile = h5py.File(filepath, 'w')
 
     imboundFile.create_dataset("numElems", data=[len(elems)])
-    imboundFile.create_dataset("elems/pA", data=[elem.pA for elem in elems])    
-    imboundFile.create_dataset("elems/pB", data=[elem.pB for elem in elems])
-    imboundFile.create_dataset("elems/center", data=[elem.center for elem in elems])
-    imboundFile.create_dataset("elems/normal", data=[elem.normal for elem in elems])
+
+    imboundFile.create_dataset("elems/xA", data=[elem.pA[0] for elem in elems])
+    imboundFile.create_dataset("elems/yA", data=[elem.pA[1] for elem in elems])
+
+    imboundFile.create_dataset("elems/xB", data=[elem.pB[0] for elem in elems])
+    imboundFile.create_dataset("elems/yB", data=[elem.pB[1] for elem in elems])
+
+    imboundFile.create_dataset("elems/xCenter", data=[elem.center[0] for elem in elems])
+    imboundFile.create_dataset("elems/yCenter", data=[elem.center[1] for elem in elems])
+
+    imboundFile.create_dataset("elems/xNorm", data=[elem.normal[0] for elem in elems])
+    imboundFile.create_dataset("elems/yNorm", data=[elem.normal[1] for elem in elems])
 
     imboundFile.close()
