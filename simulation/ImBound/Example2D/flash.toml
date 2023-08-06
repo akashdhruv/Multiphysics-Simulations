@@ -5,8 +5,9 @@ Parfile.geometry = "cartesian"
 Parfile.ib_lsIt = 3
 Parfile.ib_enableSelectiveMapping = ".FALSE."
 Parfile.ib_numBodies = 1
-Parfile.ib_bodyName = "cylinder"
-#Parfile.ib_bruteForceMapping = ".TRUE."
+Parfile.ib_bodyName = "disk"
+Parfile.ib_annQueries = 3
+# Parfile.ib_bruteForceMapping = ".TRUE."
 
 #       Size of computational volume
 Parfile.xmin = -2.0
@@ -54,7 +55,7 @@ Parfile.nblocky = 12
 Parfile.nblockz = 8
 
 Parfile.lrefine_min = 1
-Parfile.lrefine_max = 1
+Parfile.lrefine_max = 5
 
 Parfile.refine_var_count = 1
 Parfile.refine_var_1 = "lmda"
