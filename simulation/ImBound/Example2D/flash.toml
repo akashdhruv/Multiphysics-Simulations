@@ -7,13 +7,13 @@ Parfile.ib_enableSelectiveMapping = ".FALSE."
 Parfile.ib_numBodies = 1
 Parfile.ib_bodyName = "disk"
 Parfile.ib_annQueries = 3
-# Parfile.ib_bruteForceMapping = ".TRUE."
+Parfile.ib_bruteForceMapping = ".FALSE."
 
 #       Size of computational volume
 Parfile.xmin = -2.0
 Parfile.xmax = 2.0
-Parfile.ymin = -5.0
-Parfile.ymax = 1.0
+Parfile.ymin = -3.0
+Parfile.ymax = 3.0
 Parfile.zmin = -2.0
 Parfile.zmax = 2.0
 
