@@ -3,24 +3,18 @@ import h5py
 
 
 class Elem:
-    def __init__(self, pA=[], pB=[]):
+    def __init__(self, pA=[], pB=[], pc=[], normal=[]):
         self.pA = numpy.array(pA)
         self.pB = numpy.array(pB)
+        self.pC = numpy.array(pC)
+        self.normal = numpy.array(normal)
         self.center = (self.pA + self.pB) / 2.0
-        self.normal = numpy.array([pA[1] - pB[1], pB[0] - pA[0]])
-        self.tangent = numpy.array([pB[0] - pA[0], pB[1] - pA[1]])
-
-        self.normal = self.normal / numpy.sqrt(
-            (pB[0] - pA[0]) ** 2 + (pB[1] - pA[1]) ** 2
-        )
-        self.tangent = self.tangent / numpy.sqrt(
-            (pB[0] - pA[0]) ** 2 + (pB[1] - pA[1]) ** 2
-        )
 
     def move(self, offset):
         offset = numpy.array(offset)
         self.pA = self.pA + offset
         self.pB = self.pB + offset
+        self.pC = self.pC + offset
         self.center = self.center + offset
 
     def rotate(self, alpha):
@@ -35,6 +29,7 @@ class Elem:
 
         self.pA = numpy.matmul(self.pA, rotate)
         self.pB = numpy.matmul(self.pB, rotate)
+        self.pC = numpy.matmul(self.pC, rotate)
         self.center = numpy.matmul(self.center, rotate)
         self.normal = numpy.matmul(self.normal, rotate)
         self.tangent = numpy.matmul(self.tangent, rotate)
