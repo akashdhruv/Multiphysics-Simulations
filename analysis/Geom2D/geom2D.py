@@ -17,11 +17,11 @@ class Elem:
             (pB[0] - pA[0]) ** 2 + (pB[1] - pA[1]) ** 2
         )
 
-    def move(self, transform):
-        transform = numpy.array(transform)
-        self.pA = self.pA + transform
-        self.pB = self.pB + transform
-        self.center = self.center + transform
+    def move(self, offset):
+        offset = numpy.array(offset)
+        self.pA = self.pA + offset
+        self.pB = self.pB + offset
+        self.center = self.center + offset
 
     def rotate(self, alpha):
         rotation = numpy.zeros((2, 2))
