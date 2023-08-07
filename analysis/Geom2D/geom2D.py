@@ -26,10 +26,10 @@ class Elem:
     def rotate(self, alpha):
         rotation = numpy.zeros((2, 2))
 
-        rotation[0, :] = numpy.array(
+        rotation[:, 0] = numpy.array(
             [numpy.cos(alpha * numpy.pi / 180), -numpy.sin(alpha * numpy.pi / 180)]
         )
-        rotation[1, :] = numpy.array(
+        rotation[:, 1] = numpy.array(
             [numpy.sin(alpha * numpy.pi / 180), numpy.cos(alpha * numpy.pi / 180)]
         )
 
