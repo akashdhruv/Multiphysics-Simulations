@@ -3,4 +3,5 @@ boxkit
 pyjobrunner
 pymaple
 scipy==1.9.3
+numpy-stl
 git+ssh://git@github.com/Flash-X/Flash-X-Test.git@main
