@@ -1,0 +1,9 @@
+#       Size of computational volume
+Parfile.xmin = -4.0
+Parfile.xmax = 4.0
+Parfile.ymin = 0.0
+Parfile.ymax = 2.0
+Parfile.zmin = -1.0
+Parfile.zmax = 1.0
+
+
