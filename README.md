@@ -25,7 +25,7 @@ Building Flash-X in AMReX mode requires that Message Passing Interface (MPI) lib
 Organization of computational experiments is implemented using Jobrunner, which enables reuse of files/scripts along directory trees and ensures strict organization rules. Details on Jobrunner are provided separately in its own repository (https://github.com/akashdhruv/Jobrunner), and can be installed by running,
 
 ```
-pip install PyJobRunner==4.0
+pip install PyJobRunner
 ```
 
 `pip` should point to `python3+` package installer `pip3`
