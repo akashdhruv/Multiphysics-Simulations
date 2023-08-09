@@ -17,7 +17,7 @@
 
 - \[ \] Modelling microlayer and material properties in boiling.
 
-- \[ \] Immersed boundary alogrithm with ANN - use normal vectors from stl
+- \[x\] Immersed boundary alogrithm with ANN - use normal vectors from stl
   file.
 
 - \[x\] Mechanics of external simulation directory see simulation/ChannelFlow/FlashExternal
