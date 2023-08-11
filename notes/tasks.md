@@ -20,4 +20,6 @@
 - \[x\] Immersed boundary alogrithm with ANN - use normal vectors from stl
   file.
 
+- \[ \] Take a stock of services needed from Grid for physics units
+
 - \[x\] Mechanics of external simulation directory see simulation/ChannelFlow/FlashExternal
