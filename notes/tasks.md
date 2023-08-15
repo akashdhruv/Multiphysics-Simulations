@@ -10,7 +10,8 @@
 - \[ \] `yt` support
 
 - \[ \] Improve calculation of curvature, make it smoother. Current
-  implementation leads to local fluctuations in pressure: https://arxiv.org/pdf/1407.7340.pdf
+  implementation leads to local fluctuations in pressure. Refs: 
+  (1) https://arxiv.org/pdf/1407.7340.pdf (2) https://arxiv.org/pdf/2203.12558.pdf
 
 - \[ \] Read about turbulence and develop statistical operators for Flash-X
   and post-processing.
