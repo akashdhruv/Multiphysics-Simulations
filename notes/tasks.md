@@ -24,3 +24,5 @@
 - \[ \] Take a stock of services needed from Grid for physics units
 
 - \[x\] Mechanics of external simulation directory see simulation/ChannelFlow/FlashExternal
+
+-  \[ \] Pick a template and write a report: Incompressible Computational Fluid Dynamics with Flash-X
