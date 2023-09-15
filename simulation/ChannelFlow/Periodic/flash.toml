@@ -68,6 +68,12 @@ Parfile.nrefs = 1000
 Parfile.lrefine_min = 2
 Parfile.lrefine_max = 2
 
+Parfile.refine_var_count = 1
+Parfile.refine_var_1 = "velx"
+
+Parfile.amrexFaceInterpolator = "face_div_free"
+Parfile.gr_amrexUseBittree = ".TRUE."
+
 # 	Flux Conservation for AMR
 Parfile.flux_correct = ".true."
 

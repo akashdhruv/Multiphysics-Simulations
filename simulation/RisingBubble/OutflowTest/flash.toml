@@ -70,6 +70,13 @@ Parfile.nrefs = 10
 Parfile.lrefine_min = 1
 Parfile.lrefine_max = 1
 
+Parfile.refine_var_count   = 1
+Parfile.refine_var_1       = "dfun"
+Parfile.refine_cutoff_1    =  0.0
+Parfile.derefine_cutoff_1  = -0.01
+
+Parfile.amrexFaceInterpolator = "face_div_free"
+
 # 	Runtime parameters for the Rising Bubble problem.
 Parfile.gr_pmRpDivergenceFree = 1
 Parfile.gr_pmRpNfieldDivf = 2

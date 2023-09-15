@@ -126,6 +126,8 @@ Parfile.nrefs = 10000000
 Parfile.lrefine_min = 1
 Parfile.lrefine_max = 1
 
+Parfile.amrexFaceInterpolator = "face_div_free"
+
 # Flux Conservation for AMR
 Parfile.flux_correct = ".true."
 

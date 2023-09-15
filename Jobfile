@@ -16,7 +16,7 @@
 
 # schedular configuration
 schedular:
-  command: sbatch
+  command: bash
   options:
     - "#SBATCH --ntasks=10"
     - "#SBATCH -t 0-30:00"

@@ -11,4 +11,4 @@ cd $FLASHX_HOME/object && make -j && cp flashx $NodeDir/
 cd $AMREX2D_HOME/lib/pkgconfig && cp amrex.pc $NodeDir/
 
 # chdir into node directory and do clean up
-cd $NodeDir && rm -rf $FLASHX_HOME/object
+#cd $NodeDir && rm -rf $FLASHX_HOME/object
