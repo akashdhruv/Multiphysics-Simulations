@@ -1,3 +1,2 @@
-# Initialiaze Flash-X test suite
-flashxtest setup-suite FlashX.suite --overwrite
+# Run Flash-X test suite
 flashxtest run-suite --archive

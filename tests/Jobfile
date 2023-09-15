@@ -6,9 +6,6 @@ job:
     - testRun.sh
   clean:
     - "*.out"
-    - test.info
-    - config
-    - execfile
     - job.submit
     - job.setup
     - job.output
