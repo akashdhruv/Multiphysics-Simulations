@@ -109,6 +109,7 @@ LIB_MPE    =
 LIB_NCMPI  =
 LIB_HYPRE  = -L${HYPRE_PATH}/lib -lHYPRE
 LIB_AMREX  = -L${AMREX_PATH}/lib -lamrex -lpthread
+LIB_BITTREE = 
 LIB_ANN    = -L${ANN_PATH}/lib -lANN
 LIB_STDCXX = -lstdc++
 LIB_LAPACK = -llapack -lblas

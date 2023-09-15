@@ -149,6 +149,7 @@ LIB_MPI =
 
 LIB_STDCXX = -lstdc++
 LIB_AMREX = -L${AMREX_PATH}/lib -lamrex -lstdc++
+LIB_BITTREE = 
 LIB_HDF5  = -L${HDF5_PATH}/lib -lhdf5_fortran -lhdf5
 LIB_NCMPI = -L${NCMPI_PATH}/lib -lpnetcdf
 LIB_MATH  = ${LIB_ESSL}
