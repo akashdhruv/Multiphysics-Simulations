@@ -16,4 +16,9 @@
 # --tolerance, -tol	Tolerance for SFOCU
 
 incompFlow/ChannelFlow -t "UnitTest/incompFlow/ChanneFlow/2d/Periodic" -np 4
+incompFlow/ChannelFlow -t "Comparison/incompFlow/ChanneFlow/AMReX/2d" -np 4 -cbase 2023-09-15_5
+incompFlow/ChannelFlow -t "Comparison/incompFlow/ChanneFlow/Paramesh/2d" -np 4 -cbase 2023-09-15_5
+incompFlow/RisingBubble -t "UnitTest/RisingBubble/AMReX/2d" -np 3
+incompFlow/RisingBubble -t "Comparison/RisingBubble/AMReX/2d" -np 3 -cbase 2023-09-15_5
+incompFlow/RisingBubble -t "Comparison/RisingBubble/Paramesh/2d" -np 3 -cbase 2023-09-15_5
 incompFlow/PoolBoiling -t "Comparison/incompFlow/PoolBoiling/2d/AMReX" -np 4 -cbase 2023-04-03
