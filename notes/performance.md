@@ -20,4 +20,9 @@
   variables in physics/Multiphase, physics/IncompNS, and bc fill
   calls to Driver_evolveAll.F90 Reduce this by adjusting algorithm.
 
+  Update: AMReX allows for selective guardcell filling by passing lower
+          and upper bound of variable indices. Either rename variables or
+          adjust Grid_fillGuardCells to call fillpatch for single variable
+          based on mask
+
 - \[ \] Neural Poisson.
