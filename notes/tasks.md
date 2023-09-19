@@ -25,7 +25,7 @@
 
 - \[x\] Mechanics of external simulation directory see simulation/ChannelFlow/FlashExternal
 
-- \[ \] Flux correction for AMR grids
+- \[ \] Flux correction for AMR grids and looking to interpolation issues on AMReX side
    ```fortran
    ! Enforce flux correction for velocities
    ! currently exclusively implmented for
