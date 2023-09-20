@@ -77,5 +77,8 @@
          end do 
    #endif
    ```
+   
+   Reproducibility capsule is here: https://github.com/Lab-Notebooks/AMReX-Divfree
+
 
 -  \[ \] Pick a template and write a report: Incompressible Computational Fluid Dynamics with Flash-X
