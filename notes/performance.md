@@ -29,3 +29,5 @@
 
 
 - \[ \] Neural Poisson.
+
+- \[ \] Python package `hdf5_pulgin` to be able to be read compressed HDF5 datasets
