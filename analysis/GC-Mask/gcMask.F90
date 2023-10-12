@@ -19,50 +19,61 @@ subroutine initRandomMask(numVars, maskVars, mask)
 
 end subroutine initRandomMask
 
-subroutine getContiguousChunks(mask, chunkSize, chunks)
+subroutine getContiguousChunks(numVars, mask, maxChunks, chunks, chunkSize)
 
    implicit none
 
    ! Arguments
-   logical, dimension(:), intent(in) :: mask
-   integer, intent(inout) :: chunkSize
-   logical, dimension(chunkSize, 2), intent(inout) :: chunks
+   integer, intent(in) :: numVars
+   logical, dimension(numVars), intent(in) :: mask
+   integer, intent(in) :: maxChunks
+   integer, dimension(maxChunks, 2), intent(out) :: chunks
+   integer, intent(out) :: chunkSize
 
-    !!maxChunks = 10
-    !!chunks = numpy.zeros([maxChunks, 2], dtype=int)
+   ! Local Variables
+   integer :: prevVarIndex, varIndex
+   logical :: prevVarMask
 
-    !!chunkSize = -1
-    !!prevVarIndex = 0
-    !!prevVarMask = False
+   prevVarIndex = 0
+   prevVarMask = .FALSE.
+   chunks = 0
+   chunkSize = 0
 
-    !!for varIndex in range(len(mask)):
-    !!
-    !!    if mask[varIndex] and not prevVarMask:
-    !!
-    !!        chunkSize += 1
-    !!        chunks[chunkSize, 0] = varIndex
-    !!        chunks[chunkSize, 1] = varIndex
-    !!
-    !!    elif mask[varIndex] and prevVarMask:
-    !!        chunks[chunkSize, 1] = varIndex
-    !!
-    !!    prevVarIndex = varIndex
-    !!    prevVarMask = mask[varIndex]
+   do varIndex = 1, size(mask)
+
+      if (mask(varIndex) .and. (.not. prevVarMask)) then
+         chunkSize = chunkSize + 1
+         chunks(chunkSize, 1) = varIndex
+         chunks(chunkSize, 2) = varIndex
+
+      else if (mask(varIndex) .and. prevVarMask) then
+         chunks(chunkSize, 2) = varIndex
+
+      end if
+
+      prevVarIndex = varIndex
+      prevVarMask = mask(varIndex)
+
+   end do
+
 end subroutine getContiguousChunks
 
 program main
 
    implicit none
 
-   integer :: numVars = 20, maskVars = 10
-   logical, dimension(:), allocatable :: gcMask
+   integer :: numVars = 20, maskVars = 10, maxChunks = 10, chunkSize = 0
+   logical, dimension(:), allocatable :: gcMask(:)
+   integer, dimension(:, :), allocatable :: gcChunks
 
-   allocate (gcMask(numVars))
+   allocate (gcMask(numVars), gcChunks(maxChunks, 2))
 
    call initRandomMask(numVars, maskVars, gcMask)
+   call getContiguousChunks(numVars, gcMask, maxChunks, gcChunks, chunkSize)
 
    print *, gcMask
+   print *, gcChunks
 
-   deallocate (gcMask)
+   deallocate (gcMask, gcChunks)
 
 end program main
