@@ -1,4 +1,4 @@
-!! A script to test new masking strategies for Flash-X
+!! A script to test new masking strategies for Flash-X + AMReX
 
 subroutine initRandomMask(numVars, maskVars, mask)
 
@@ -65,6 +65,7 @@ program main
    integer :: numVars = 20, maskVars = 10, maxChunks = 10, chunkSize = 0
    logical, dimension(:), allocatable :: gcMask(:)
    integer, dimension(:, :), allocatable :: gcChunks
+   integer :: chunkIndex
 
    allocate (gcMask(numVars), gcChunks(maxChunks, 2))
 
@@ -72,7 +73,10 @@ program main
    call getContiguousChunks(numVars, gcMask, maxChunks, gcChunks, chunkSize)
 
    print *, gcMask
-   print *, gcChunks
+
+   do chunkIndex = 1, chunkSize
+      print *, "call amrex_fillpatch for unks:", gcChunks(chunkIndex, 1), "-", gcChunks(chunkIndex, 2)
+   end do
 
    deallocate (gcMask, gcChunks)
 
