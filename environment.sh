@@ -42,6 +42,15 @@ export LIBRARY_PATH="$LD_LIBRARY_PATH"
 # Path to Flash-X
 export FLASHX_HOME="$PROJECT_HOME/software/flashx/Flash-X"
 
+# Flash-X test archive paths
+if ! [ $FLASHTEST_MAIN_ARCHIVE ]; then
+	export FLASHTEST_MAIN_ARCHIVE="$PROJECT_HOME/tests/MainArchive"
+fi
+
+if ! [ $FLASHTEST_LOCAL_ARCHIVE ]; then
+	export FLASHTEST_LOCAL_ARCHIVE="$PROJECT_HOME/tests/LocalArchive"
+fi
+
 # Output information to stdout
 echo "---------------------------------------------------------------------------------------"
 echo "Execution Environment:"
