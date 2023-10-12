@@ -1,0 +1,5 @@
+job:
+  setup:
+    - runTests.sh
+  clean:
+    - a.out
