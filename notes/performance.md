@@ -14,9 +14,9 @@
 - \[ \] Facevar updates to leverage divergence free interpolation in AMReX.
   Running simulations with higher refinement.
 
-- \[ \] Bittree AMReX updates.
+- \[ \] Bittree AMReX updates, partially done. Need to add FORTRAN API
 
-- \[ \] Guard cells filling time has increased after adding more grid
+- \[x\] Guard cells filling time has increased after adding more grid
   variables in physics/Multiphase, physics/IncompNS, and bc fill
   calls to Driver_evolveAll.F90 Reduce this by adjusting algorithm.
 
