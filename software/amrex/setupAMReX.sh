@@ -2,10 +2,10 @@
 
 # Setup AMReX
 if [ ! -d "AMReX" ]; then
-	git clone git@github.com:Box-Tools/amrex --branch bittree-sept-2023 AMReX && cd AMReX
+	git clone git@github.com:AMReX-Codes/amrex --branch development AMReX && cd AMReX
 
 	# checkout desired branch
-	# git checkout cff96a9
+	git checkout 23.10
 
 else
 	cd AMReX

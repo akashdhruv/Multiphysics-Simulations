@@ -21,4 +21,6 @@ incompFlow/ChannelFlow -t "Comparison/incompFlow/ChanneFlow/Paramesh/2d" -np 4 -
 incompFlow/RisingBubble -t "UnitTest/RisingBubble/AMReX/2d" -np 3
 incompFlow/RisingBubble -t "Comparison/RisingBubble/AMReX/2d" -np 3 -cbase 2023-09-15_5
 incompFlow/RisingBubble -t "Comparison/RisingBubble/Paramesh/2d" -np 3 -cbase 2023-09-15_5
+incompFlow/RisingBubble -t "Comparison/RisingBubble/AMReXGCFill/2d" -np 3 -cbase 2023-10-21
+incompFlow/RisingBubble -t "Comparison/RisingBubble/ParameshGCFill/2d" -np 3 -cbase 2023-10-21
 incompFlow/PoolBoiling -t "Comparison/incompFlow/PoolBoiling/2d/AMReX" -np 4 -cbase 2023-04-03
