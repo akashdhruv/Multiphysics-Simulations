@@ -5,7 +5,7 @@ if [ ! -d "AMReX" ]; then
 	git clone git@github.com:AMReX-Codes/amrex --branch development AMReX && cd AMReX
 
 	# checkout desired branch
-	git checkout 23.10
+	git checkout 23.11
 
 else
 	cd AMReX
